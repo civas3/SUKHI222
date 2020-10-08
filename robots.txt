@@ -1,0 +1,32 @@
+User-agent: *
+
+Disallow: /_cgi-bin/
+Disallow: /_errorpages/
+Disallow: /errors/
+Disallow: /ftp/
+Disallow: /ftpp/
+Disallow: /gallery/
+Disallow: /lib/
+Disallow: /plugins/
+Disallow: /unused/
+
+
+
+#Sitemap: http://www.domain.com/sitemap.xml
+
+
+
+
+
+# User-agent: Googlebot-Image
+# Allow: /images/
+
+# User-agent: Adsbot-Google
+# Allow: /
+
+# User-agent: Googlebot-Mobile
+# Allow: /
+
+# digg mirror
+# User-agent: duggmirror
+# Disallow: /

@@ -1,0 +1,17 @@
+.header-image {
+  @include header-image-properties(45vh);
+  margin-bottom: 0.2rem;
+  position: relative;
+}
+
+.header-noimage {
+  @include header-image-properties(33vh);
+}
+
+@media screen and (max-width: 513px) {
+  .header-image {
+    @include header-image-properties(33vh);
+    margin-bottom: 0.2rem;
+    height: 45vh;
+  }
+}

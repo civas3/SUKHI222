@@ -1,0 +1,34 @@
+.project{
+width: 80%;
+@include respond(b-phone) {
+    width: 90%;
+}
+@include margin-left-right-auto;
+
+&__item{
+    margin: 5rem 0;
+    p{
+        margin: 2rem 0;
+    }
+}
+    img{
+        width: 40vw;
+        height: auto;
+    @include border-white;
+    margin: 2rem 0;
+    @include respond(b-phone) {
+        width: 100%;
+        height: 100%;
+    }
+}
+.get-involved-button{
+    display: block;
+}
+}
+
+
+
+   
+    
+
+    

@@ -1,0 +1,73 @@
+
+.sign-up-newsletter {
+    width: 100%;
+    padding: 0.2rem 0;
+    margin-top: 25rem;
+    text-align: center;
+    border-top: $color-primary-gold solid 0.1rem;
+    background-color: $color-primary-black-background;
+    
+    .sign-up-newsletter-form {
+      display: flex;
+      text-align: center;
+      .sign-up-newsletter-container {
+        padding-top: 2rem;
+        margin: 0 auto;
+        b {
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+        }
+        label {
+          display: block;
+        }
+        input[type="email"] {
+          width: 70%;
+          padding: 1rem 0;
+          margin: 0 auto;
+          margin-top: 0.5rem;
+          display: inline-block;
+          border: none;
+          border-radius: 1rem;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          background: $color-primary-white;
+          text-align: center;
+          @include respond(b-phone) {
+            width: 80%;
+            border-radius: 0;
+          }
+        
+        }
+        button {
+          background-color: $color-primary-green;
+          color: $color-primary-black-background;
+          padding: 0.3rem 2rem 0.9rem 2rem;
+          border: none;
+          cursor: pointer;
+          width: 20%;
+          border-radius: 1rem;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          &:after{
+            content: "";
+          }
+          @include respond(b-phone) {
+            width: 80%;
+            border-radius: 0;
+          }
+          transition: 0.5s all ease;
+          &:hover {
+            background-color: darken($color-primary-green, 10%);
+            color: $color-primary-white;
+          }
+        }
+        p{
+          @include respond(s-phone) {
+            padding: 0 1rem;
+          }
+        }
+        
+      }
+    }
+  }
+  

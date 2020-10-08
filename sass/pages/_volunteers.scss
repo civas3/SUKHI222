@@ -1,0 +1,24 @@
+//VOLUNTEERS
+.volunteers-image {
+  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
+    url(../images/header/volunteers-header.jpg);
+} 
+
+.volunteers{
+  &__item {
+    width: 80vw;
+    margin-top: 10rem;
+    @include respond(tab-land) {
+      width: 90vw;
+    }
+    ol{
+      @include respond(b-phone) {
+        margin-left: 1rem;
+      }
+    }
+    
+
+    
+  }
+}
+

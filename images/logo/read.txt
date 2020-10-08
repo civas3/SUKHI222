@@ -1,0 +1,5 @@
+PS --> Image --> Canvas Size --> H600px - W1000px
+
+PS --> Image --> Image Size --> W250px
+PS --> Image --> Image Size --> W500px
+

@@ -1,0 +1,29 @@
+//TERMS-PRIVACY
+.terms-privacy {
+  &__item {
+    width: 80vw;
+    margin-top: 3rem;
+    @include respond(b-phone) {
+      width: 80vw;
+      margin-top: 5rem;
+    }
+    h2{
+      line-height: 5rem;
+      @include respond(b-phone) {
+        padding-bottom: 1rem;
+      }
+
+
+    }
+    ul {
+      list-style-type: none;
+      @include respond(b-phone) {
+        margin: 0;
+        padding: 0;
+      }
+  
+    }
+  }
+
+
+}

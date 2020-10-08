@@ -1,0 +1,60 @@
+//COLLABORATORS
+.collaborators-image {
+  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
+    url(../images/header/collaborators-header.jpg);
+}
+
+.collaborators {
+  &__item {
+    display: flex;
+    width: 80vw;
+    @include respond(tab-land) {
+      flex-direction: column;
+      width: 90vw;
+      &:not(:first-child){
+        padding-top: 5rem;
+      }
+    }
+    &:first-child{
+      justify-content: center;
+    }
+
+    &--organisation-photo {
+      margin-top: 8rem;
+      @include respond(tab-land) {
+        text-align: center;
+        padding-bottom: 5rem;
+      }
+      
+      @include respond(tab-port) {
+        padding-bottom: 1rem;
+      }
+      @include respond(b-phone) {
+        padding-bottom: 2rem;
+      }
+
+  
+      img {
+        @include border-white;
+      }
+    }
+
+    &--organisation-info {
+      padding: 5rem;
+      @include respond(tab-land) {
+        padding-top: 2rem;
+      }
+      @include respond(b-phone) {
+        padding: 0;
+      }
+      h2{
+        @include respond(tab-land) {
+          text-align: center;
+          padding-bottom: 2rem;
+        }
+
+      }
+
+    }
+  }
+}

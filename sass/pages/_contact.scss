@@ -1,0 +1,78 @@
+.contact-image {
+  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
+    url(../images/header/contact-header.jpg);
+}
+
+.contact-form {
+  @include respond(tab-land) {
+    flex-direction: column-reverse;
+}
+  &__item {
+    display: flex;
+    width: 40vw;
+    .offices-details{
+      @include margin-left-right-auto;
+      @include respond(tab-land) {
+        padding-top: 10rem;
+      }
+
+    }
+    @include respond(tab-land) {
+      width: 90vw;
+  }
+    ul {
+      list-style-type: none;
+      padding-top: 2rem;
+      li {
+        a {
+          text-decoration: none;
+          color: $primary-color-gray-font;
+          &:hover {
+            color: $color-primary-blue;
+          }
+        }
+      }
+    }
+    .container {
+      border-radius: 0.5rem;
+      background-color: $color-primary-white;
+      padding: 2rem;
+      input[type="text"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 0.1rem solid #ccc;
+        border-radius: 0.4rem;
+        box-sizing: border-box;
+        margin-top: 0.6rem;
+        margin-bottom: 1.6rem;
+        resize: vertical;
+        font-size: 1.3rem;
+        &::placeholder {
+          font-size: 1.3rem;
+        }
+        option {
+          font-size: 1.3rem;
+        }
+      }
+      input[type="submit"] {
+        background-color: $color-primary-green;
+        color: white;
+        padding: 1.2rem 2rem;
+        border: none;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        transition: 0.5s all ease;
+        &:hover {
+          background-color: darken($color-primary-green, 10%);
+          color: $color-primary-black-background;
+        }
+        &::after {
+          background-color: darken($color-primary-green, 10%);
+        }
+      }    
+    }
+  }
+}

@@ -1,0 +1,81 @@
+
+
+
+/* accordian */
+.accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary-white;
+  color: $color-primary-black-background;
+  cursor: pointer;
+  padding: 0.1rem 1.8rem ;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: 0.3s;
+  &:hover{
+    background-color: $color-primary-blue-transparent;
+  }
+  &.active{
+    background-color: $color-primary-blue-transparent;
+    font-weight: bold;
+  }
+
+}
+
+button{
+  h2{
+    padding-top: 2rem;
+  }
+  &:first-of-type {
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 1rem 1rem;
+  }
+  &:after {
+    content: '+';
+    /* Unicode character for "plus" sign (+) */
+    color: $color-primary-gold;
+    margin-left: 0.5rem;
+    font-size: 150%;
+
+  }
+  &:hover:after {
+    color: $color-primary-gold;
+  }
+  &.active:after {
+    content: "-";
+    /* Unicode character for "minus" sign (-) */
+  }
+}
+
+.panel {
+  padding: 1.8rem 1.8rem;
+  background-color: $color-primary-white;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 2.5s ease-in-out;
+  @include respond(b-phone) {
+    transition: all 0.5s ease-in-out;
+
+  }
+
+  
+  opacity: 0;
+  &:last-of-type {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  max-height: fit-content;
+  /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+
+/* end accordian */

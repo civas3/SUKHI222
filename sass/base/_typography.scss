@@ -1,0 +1,460 @@
+/*“Web typography” refers to the appearance of all the text on your website. It includes basic 
+CSS text properties like what font to use and whether it should be italic or not, but typography 
+is much more than that. It’s about the space between and around letters, words, and lines. It’s 
+the size of different runs of text in relation to one another, and the history behind each font family.
+
+https://www.internetingishard.com/html-and-css/web-typography/
+*/
+
+/* !!!!___ Use % rather than px for all layout-related lenghts (including pictures) ___!!!! */
+
+//BLUE COLOR = INFORMAL
+//RED COLOR = IMPORTANT
+//GREEN COLOR = ACTION
+
+//GLOBAL
+h1{
+    color: $color-primary-white !important;
+    text-align: center;
+}
+
+h2{
+    font-size: 2.4rem;
+}
+
+h2, h3, h4, h5, h6 {
+    color: $primary-color-darker-gray-header;
+   padding-bottom: 3rem !important;
+   @include respond(tab-port) {
+    padding-bottom: 2.5rem !important;
+   }
+   @include respond(b-phone) {
+    padding-bottom: 2rem !important;
+    }
+   
+
+}
+
+p{
+    line-height: 2.5rem;
+}
+
+
+
+//FA ICONS
+.fa {
+    font-size: 3rem;
+    @include respond(big-desktop) {
+        //font-size: 4.8rem;  
+    }
+    @include respond(tab-land) {
+        font-size: 3.5rem;  
+    }
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    
+    span {
+        font-size: 1rem;
+        color: $primary-color-gray-font;
+        @include respond(big-desktop) {
+           // font-size: 2.5rem;
+        }
+        @include respond(tab-land) {
+            font-size: 2rem;
+
+        }
+        @include respond(tab-port) {
+            font-size: 1.5rem;
+        }
+        @include respond(m-phone) {
+            font-size: 1.3rem;
+          }
+          @include respond(s-phone) {
+            font-size: 1.3rem;
+          }  
+
+
+    }
+}
+
+
+//all H1 in header-mage section
+.intro {
+    h1 {
+        font-size: 5rem;
+        line-height: 7rem;
+        text-shadow: black 0.3rem 0.3rem;
+        background-color: $color-primary-black-transparent;
+        padding: 0.1rem 0.5rem;
+        border-radius: 1rem;  
+        letter-spacing: 0.3rem;
+        display: table; //background color width of the text
+        text-align: center;
+        margin: auto;
+        
+        @include respond(tab-land) {
+            line-height: 5rem;
+
+        }   
+        @include respond(b-phone) {
+            font-size: 4.5rem;
+            line-height: 5rem;
+        }     
+        @include respond(m-phone) {
+            font-size: 4rem;
+        }
+        @include respond(s-phone) {
+            font-size: 3.5rem;
+            line-height: 4.5rem;
+        }
+        
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+
+
+
+
+//INDEX
+
+//slideshow
+.hero-slideshow {
+    h1, h2 {
+        font-size: 5rem;
+        text-shadow: 0.3rem 0.3rem $color-primary-black-background;
+        font-weight: 700;
+        color: $color-primary-white;
+          @include respond(big-desktop) {
+          //  font-size: 8.5rem;
+           // line-height: 10rem;
+          }  
+          @include respond(b-phone) {
+            font-size: 4rem;
+            line-height: 5.5rem;
+          } 
+          @include respond(m-phone) {
+            font-size: 3.5rem;
+            line-height: 5rem;
+          }
+
+    }
+    p {
+        font-size: 2.5rem;
+        text-shadow: 0.2rem 0.2rem $color-primary-black-background;
+        line-height: 3.5rem;
+        color: $color-primary-white;
+        @include respond(big-desktop) {
+          //  font-size: 5rem;
+           // line-height: 6.5rem;
+        } 
+        @include respond(b-phone) {
+            font-size: 2.2rem;
+            line-height: 3rem;
+        }
+        @include respond(m-phone) {
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+        } 
+ 
+    }
+    .index-hero-button a {
+        font-size: 2rem;
+        text-shadow: 0.1rem 0.1rem $color-primary-black-background;
+        @include respond(big-desktop) {
+           // font-size: 5rem;
+        }
+        @include respond(b-phone) {
+            font-size: 1.2rem;
+        }
+        @include respond(m-phone) {
+            font-size: 1.4rem;
+        }
+       
+    }
+}
+
+.home-page{   
+    h3{
+        text-align: center;
+        color: header;
+        font-size: 3rem;
+     
+       
+    }
+    li{
+        line-height: 2.5rem;
+    }
+}
+
+//SUKHI222
+.sukhi222{
+    h2{
+        text-align: center;
+    }
+    li{
+        line-height: 2.5rem;
+    }
+}
+//FAQ
+//STRUCTURE & FUNCTIONS
+//WHERE-WE-WORK
+.where-we-work {
+    .position-title {
+        color: $color-primary-red;
+        font-weight: 500;
+        @include respond(tab-land) {
+            text-align: center;
+            line-height: 4rem;
+          }
+    }
+}
+
+//PROJECTS
+.projects{  
+  //active panel   
+  .show{
+      text-align: center;
+  }  
+  .panel {
+    .accordian-section--item {
+      h3 {
+        text-align: center;
+        font-size: 130%;
+      }
+    }
+  }
+}
+
+
+//VOLOUNTER
+.volunteers{
+    h2{
+        text-align: center;
+    }
+    li{
+        line-height: 2.5rem;
+    }
+}
+//AMBASSADORS
+//INTERS
+//COLLABORATORS
+
+//JOBS
+
+//FEEDS
+.feed{
+    h1{
+        color: $color-primary-black-background !important;  
+    }
+    &__item{
+        color: $color-primary-black-background;
+        &--info{
+            font-weight: 400;
+            color: $color-primary-black-background;
+            font-size: 85%;
+            @include respond(tab-port) {
+                font-size: 60%;
+            }
+        }
+    }
+    &--description{
+         a{
+             text-align: right;
+             text-decoration: none;
+             color: $color-primary-black-background;
+             font-weight: bold;
+             &:hover{
+                 color: $primary-color-gray-font;
+             }
+         }       
+     }
+}
+
+//FEED ARTICLE
+
+.article{
+    color: black;
+    h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 4.4rem; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;} 
+    h2, h3, h4 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 1.9rem; font-style: normal; font-variant: normal; font-weight: 700; line-height: 5rem; } 
+    p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 1.8rem; font-style: normal; font-variant: normal; font-weight: 400; line-height: 2rem; } 
+    blockquote { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 2.1rem; font-style: normal; font-variant: normal; font-weight: 400; line-height: 3rem; } 
+    pre { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 1.3rem; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.6rem; }
+    &__item{
+        h1{
+            color: black !important;
+        }
+           li{
+            text-align: center;  
+            font-size: 120%;
+           }  
+        
+        p{
+            line-height: 3rem;
+            letter-spacing: 0.1rem;
+        }
+    
+       
+        &--info{
+            @include respond(tab-port) {
+                font-size: 80%;
+            }
+            @include respond(b-phone) {
+                font-size: 65%;
+            }
+            
+            p{
+                font-weight: bold;
+            } 
+        }
+        span{
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            font-size: 120%;
+        }
+    
+    }
+     
+}
+
+
+
+
+//GALLERY
+
+//CONTACTS
+
+//FOOTER
+
+.footer {
+    color: $color-primary-white;
+
+    &__item {
+        &:nth-child(2) a:hover {
+            color: $color-primary-green;
+        }
+
+        &:nth-child(3) a:hover {
+            color: $color-primary-blue;
+        }
+        @include respond(b-phone) {
+            padding-top: 3rem;
+        }
+
+    }
+    h5{
+        color: $color-primary-white;
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 400;
+        padding-bottom: 2rem !important;
+      
+        @include respond(tab-land) {
+            padding-bottom: 0 !important;
+        }  
+        @include respond(b-phone) {
+
+        }  
+        @include respond(s-phone) {
+        }
+    }
+
+    a {
+        color: $color-primary-white;
+    }
+    .fa {
+        font-size: 1.6rem;
+       
+          @include respond(tab-land) {
+            font-size: 2rem;
+          }
+        
+        @include respond(b-phone) {
+            font-size: 2.5rem;
+        }
+        @include respond(s-phone) {
+            font-size: 1.9rem;  
+        }
+
+
+    }
+}
+
+.copy-right {
+    color: $color-primary-white;
+    font-size: 1.3rem;
+    span{
+        &:first-child{
+            color: $color-primary-blue;
+        }
+        &:nth-child(2){
+            color: $color-primary-green;
+        }
+        &:nth-child(3){
+            color: $color-primary-red;
+        }
+        &:nth-child(4){ 
+            text-shadow: $color-primary-red 0.1rem 0.1rem;
+        }
+        
+    }
+}
+
+.sign-up-newsletter {
+    color: $color-primary-white;
+    font-size: 1.6rem;
+
+    .sign-up-newsletter-form {
+        label {
+            font-size: 1.6rem;
+
+            @include respond(b-phone) {
+                font-size: 1.7rem;
+                margin: 1rem 0;
+            }
+
+
+        }
+
+        p {
+            font-size: 1.2rem;
+
+            @include respond(b-phone) {
+                margin: 2rem 0;
+            }
+
+        }
+        a:hover{
+            @include scale-up;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

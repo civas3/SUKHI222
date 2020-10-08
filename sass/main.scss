@@ -1,0 +1,95 @@
+
+//ABSTRACTS
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+
+//BASE
+@import "base/base"; 
+@import "base/typography";
+@import "base/utilities";
+@import "base/animations";
+
+//COMPONENTS
+@import "components/hero-slideshow";
+@import "components/carousel";
+@import "components/accordion";
+@import "components/button";
+@import "components/fa-icons";
+@import "components/header-image";
+@import "components/donate";
+@import "components/newsletter";
+@import "components/social-share-icons";
+
+
+
+//LAYOUT
+//@import "layout/header";
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/footer";
+
+//PAGES
+//-Home
+@import "pages/home";
+
+//-About
+//-------------------------------------------who-we-are
+@import "pages/sukhi222";
+//-------------------------------------------what-we-do
+//@import "pages/faq";
+//-------------------------------------------why-we-do-it
+//-------------------------------------------how-we-work
+//@import "pages/structure-and-functions";
+//-------------------------------------------where-we-work
+@import "pages/where-we-work";
+//-------------------------------------------projects
+@import "pages/projects";
+@import "pages/project";
+
+//-Get Involved
+@import "pages/volunteers";
+//@import "pages/ambassadors";
+//@import "pages/interns";
+@import "pages/collaborators";
+//@import "pages/jobs";
+
+//-Feed
+@import "pages/feed";
+//@import "pages/news";
+//@import "pages/events";
+//@import "pages/blog";
+
+//-Galery
+@import "pages/gallery";
+
+//-Contact
+@import "pages/contact";
+
+//-Additional
+@import "pages/get-involved";
+@import "pages/page-index";
+@import "pages/terms-privacy";
+@import "responsive/responsive";
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+ 
+
+
+
+
+    
+
+

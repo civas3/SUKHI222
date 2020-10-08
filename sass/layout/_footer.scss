@@ -1,0 +1,120 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: space-around;
+  background-color: $color-primary-black-background;
+  height: auto;
+  padding: 2rem 0;
+
+  border-top: $color-primary-gold solid 0.1rem;
+  border-bottom: $color-primary-gold solid 0.1rem;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-basis: 21%;
+   // background-color: red;
+    margin: 0.5rem;
+    @include respond(tab-port) {
+      flex-basis: 45%;
+      &:first-child {
+        flex-basis: 100%;
+      }
+      &:last-child {
+        flex-basis: 100%;
+      }
+    }
+    @include respond(b-phone) {
+      flex: 100%;
+      margin-bottom: 5rem;
+
+    }
+
+    &--nav {
+      display: flex;
+      flex-direction: column;
+      ul{
+        li {
+          list-style: circle;
+          min-width: 15ch;
+          padding: 0.2rem;
+          @include respond(tab-land) {
+            padding: 0.5rem; 
+          }
+          @include respond(b-phone) {
+            padding: 0.7rem; 
+          }
+        }
+      }
+    }
+
+    &--social-links {
+      text-align: center;
+      @include respond(tab-port) {
+          margin: 4rem 0;
+      }
+      a { 
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+        margin: 0.5rem;
+        padding: 0.7rem 0.6rem;
+        @include respond(big-desktop) {
+         // padding: 1.6rem 1rem;
+        }
+        @include respond(tab-port) {
+          padding: 3rem 1rem;
+        }
+        @include respond(b-phone) {
+          padding: 2rem;
+        }
+
+        border-radius: 1rem;
+        &:hover{
+          -webkit-filter: brightness(130%);
+          -moz-filter: brightness(130%);
+          -ms-filter: brightness(130%);
+          filter: brightness(130%); 
+        }
+
+      }
+    }
+
+    &--logo{
+      img{
+        @include respond(tab-port) {
+          margin: 5rem 0;
+      }
+      @include respond(b-phone) {
+        margin: 2rem 0;
+    }
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+  .gold-border{
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+  }
+}
+
+
+
+
+.copy-right {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: $color-primary-black-background;
+  @include respond(tab-land) {
+    padding-bottom: 5rem;
+  }
+}
+
+
+
