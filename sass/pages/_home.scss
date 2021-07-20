@@ -1,151 +1,72 @@
-
-.main-wrapper {
-  .wrapper {
-    max-width: 100%;
-    margin: auto;
-    display: grid;
-    grid-gap: 1rem;
-    @include respond(tab-land) {
-      grid-row-gap: 10rem;
+//HOME PAGE
+#home-page {
+    //home page row
+  .row {
+    flex-direction: column-reverse;
+    @include respond(s-desktop) {
+      flex-direction: row; 
+     
     }
-    grid-template-areas: 
-      "mission-statement mission-statement "
-      "who-we-are who-we-are "
-      "what-we-do what-we-do "
-      "why-we-do-it why-we-do-it "
-      "how-we-work how-we-work "
-      "where-we-work where-we-work "
-      "works-and-services works-and-services "    
-      ;
+   
+    
   }
-  .section-mission-statement {
-    grid-area: mission-statement;
-    min-height: 37rem;
-    .mission-statement {
-      text-align: center;
-      width: 75%;
-      @include respond(big-desktop) {
-       // width: 90%;
-       // padding-bottom: 20rem;
+//home section
+  section {
+    &:not(:first-child) {
+      margin: 10rem 0;
+      @include respond(tab-port) {
+        margin: 22.5rem 0;
       }
-      @include respond(tab-land) {
-        width: 100%;
-        text-align: left;
+    }
+    &:nth-child(even) .row {
+      @include respond(s-desktop) {
+        flex-direction: row-reverse;
       }
-      margin: 0 auto;
     }
   }
-  .section-what-we-do {
-    @include grid-template(what-we-do);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column);
-    } 
-  }
-  
-  .section-why-we-do-it {
-    @include grid-template(why-we-do-it);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column-reverse);
-    } 
-  }
-  .section-how-we-work {
-    @include grid-template(how-we-work);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column);
-
-    } 
-  }
-  .section-where-we-work {
-    @include grid-template(where-we-work);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column-reverse);
-    } 
-  }
-  .section-works-and-services {
-    @include grid-template(works-and-services);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column);
-    } 
-  }
-  .section-who-we-are {
-    @include grid-template(who-we-are);
-    @include respond(tab-land) {
-      @include grid-template-mobile(column-reverse);
-    } 
-  }
-
+//home page section content
   .section-content {
-    word-spacing: 0.5rem;
-    align-self: center;
-    padding: 4rem;
-    @include respond(tab-land) {
-      padding: 4rem 1rem;
+    justify-content: center;
+    //home page section content header
+    &__header {
+    
     }
-    ol li{
-      list-style-type: circle !important;
-      margin-top: 1rem;
-     } 
-     p{
-      margin-top: 1rem;
-     } 
-  }
-  .section-image {
-    align-self: center;
-    justify-self: center;
-    img {
-      width: 100%;
-      object-fit: cover;
-      @include border-white;
-      @include respond(big-desktop) {
-       // width: 120%;
-       // height: auto;
-        //margin-left: -10%;
+    //home page section content info
+    &__info {
+       
       }
-      
-    }
-  }
-}
-
-/**/
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  // IE10+ CSS here
-  .hero-video {
-    .intro {
-      top: 65%;
-      left: 5%;
-      transform: none;
-      h1 {
-        margin-top: -20rem;
-      }
-    }
-  }
-  .main-wrapper {
-    width: 100vw;
-       .wrapper {
-      .mission-statement {
-        padding-bottom: 14rem;
-      }
-      .section-what-we-do,
-      .section-how-we-work,
-      .section-works-and-services,
-      .section-why-we-do-it,
-      .section-where-we-work,
-      .section-what-we-do,
-      .section-who-we-are {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-        .section-content {
-          width: 40%;          
-        }
-        .section-image {
-          width: 40%; 
-          padding: 4rem;       
-          img {
-            width: 100%;
+ 
+   
+    //home page section content nav buttons
+    &__nav-index-buttons {
+      .button-item{
+          width: 100%;
+          .btn{
+            width: 24rem;
+            @include respond(tab-land) {
+              min-width: 12rem;
+              width: auto;
+            }  
           }
-        }
+          h6{
+            padding-bottom: 1.5rem;
+          }
+      }
+    }
+
+    //home page section image
+    &__image{
+      display: flex;
+      justify-content: center;
+      @include respond(s-desktop) {
+        justify-content: flex-start;
+      }
+
+      img{
+          width: 80%;
+          height: 100% !important;
+          //border: solid 0.3rem white;
+          @include image-shadows;
       }
     }
   }

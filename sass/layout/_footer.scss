@@ -1,120 +1,115 @@
+//FOOTER
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  justify-content: space-around;
   background-color: $color-primary-black-background;
-  height: auto;
-  padding: 2rem 0;
-
   border-top: $color-primary-gold solid 0.1rem;
   border-bottom: $color-primary-gold solid 0.1rem;
-
-  &__item {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    flex-basis: 21%;
-   // background-color: red;
-    margin: 0.5rem;
-    @include respond(tab-port) {
-      flex-basis: 45%;
-      &:first-child {
-        flex-basis: 100%;
-      }
-      &:last-child {
-        flex-basis: 100%;
-      }
-    }
-    @include respond(b-phone) {
-      flex: 100%;
-      margin-bottom: 5rem;
-
-    }
-
-    &--nav {
-      display: flex;
-      flex-direction: column;
-      ul{
-        li {
-          list-style: circle;
-          min-width: 15ch;
-          padding: 0.2rem;
-          @include respond(tab-land) {
-            padding: 0.5rem; 
-          }
-          @include respond(b-phone) {
-            padding: 0.7rem; 
-          }
-        }
-      }
-    }
-
-    &--social-links {
-      text-align: center;
-      @include respond(tab-port) {
-          margin: 4rem 0;
-      }
-      a { 
-        display: inline-block;
-        width: 33%;
-        text-align: center;
-        margin: 0.5rem;
-        padding: 0.7rem 0.6rem;
-        @include respond(big-desktop) {
-         // padding: 1.6rem 1rem;
-        }
-        @include respond(tab-port) {
-          padding: 3rem 1rem;
-        }
-        @include respond(b-phone) {
-          padding: 2rem;
-        }
-
-        border-radius: 1rem;
-        &:hover{
-          -webkit-filter: brightness(130%);
-          -moz-filter: brightness(130%);
-          -ms-filter: brightness(130%);
-          filter: brightness(130%); 
-        }
-
-      }
-    }
-
-    &--logo{
-      img{
-        @include respond(tab-port) {
-          margin: 5rem 0;
-      }
-      @include respond(b-phone) {
-        margin: 2rem 0;
-    }
-      }
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-  .gold-border{
-    margin-bottom: 1rem;
-    padding-bottom: 0;
-  }
-}
-
-
-
-
-.copy-right {
-  width: 100%;
-  padding: 1rem 0;
-  text-align: center;
-  background-color: $color-primary-black-background;
   @include respond(tab-land) {
-    padding-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  //footer section
+  &-section {
+    margin: 0 !important;
+    &:first-child {
+      padding-top: 12.5rem;
+      @include respond(s-desktop) {
+        padding-top: 7.5rem;
+      }
+    }
+    padding-bottom: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    
+    @include respond(tab-land) {
+      width: 50%;
+      padding-top: 12.5rem;
+    }
+    @include respond(s-desktop) {
+      width: 25%;
+      justify-content: flex-start;
+      padding: 5rem 0;
+    }
+
+    //footer section header
+    &__header {
+      h2 {
+        color: $color-primary-white;
+        letter-spacing: 0.3rem;
+        padding: 0;
+
+        @include respond(s-desktop) {
+          font-size: 2.1rem;
+        }
+      }
+      .gold-border {
+        margin: 1rem auto;
+      }
+    }
+    //footer section content
+    &__content {
+      .row{
+        margin-left: 0;
+        margin-right: 0;
+      }
+      li {
+        list-style: circle;
+      }
+      a {
+        color: $color-primary-white;
+        line-height: 300%;
+        font-size: 2.2rem;
+        letter-spacing: 0.2rem;
+        @include respond(tab-land) {
+          line-height: 200%;
+        }
+        @include respond(s-desktop) {
+          font-size: 1.8rem;
+        }
+      }
+       //footer section fa icons
+      .fa {
+        margin: 2rem 0;
+        font-size: 4.5rem;
+        width: 9rem;
+        height: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0.5rem;
+      //  border: $color-primary-white solid 0.1rem;
+        &:hover{
+          -webkit-box-shadow: 0px 2px 2px -1px rgb(235, 230, 230);
+          -moz-box-shadow: 0px 2px 2px -1px rgb(235, 230, 230);
+          box-shadow: 0px 2px 2px -1px rgb(233, 24, 24);
+        }
+        @include respond(tab-port) {
+          margin: 1.5rem;
+        }
+        @include respond(s-desktop) {
+          font-size: 2rem;
+         // width: 6rem;
+          width: 9rem;
+          height: 5rem;
+          margin: 1rem;
+        }
+      }
+    }
   }
 }
 
+.order {
+  order: 1;
+}
+
+.copy-rights {
+  background-color: $color-primary-black-background !important;
+  text-align: center;
+  color: $color-primary-gold;
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+}
 
 

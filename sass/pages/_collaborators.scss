@@ -1,60 +1,49 @@
 //COLLABORATORS
-.collaborators-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/collaborators-header.jpg);
-}
+#get-involved-collaborators{
+  //collaborators row
+ // background-color: red !important;
 
-.collaborators {
-  &__item {
-    display: flex;
-    width: 80vw;
+  .row{
+    flex-direction: column-reverse;
     @include respond(tab-land) {
-      flex-direction: column;
-      width: 90vw;
-      &:not(:first-child){
-        padding-top: 5rem;
-      }
+      flex-direction: row-reverse;
+       @include section-bottom-shadow;
     }
-    &:first-child{
-      justify-content: center;
-    }
-
-    &--organisation-photo {
-      margin-top: 8rem;
-      @include respond(tab-land) {
-        text-align: center;
-        padding-bottom: 5rem;
-      }
-      
-      @include respond(tab-port) {
-        padding-bottom: 1rem;
-      }
-      @include respond(b-phone) {
-        padding-bottom: 2rem;
-      }
-
-  
-      img {
-        @include border-white;
-      }
-    }
-
-    &--organisation-info {
-      padding: 5rem;
-      @include respond(tab-land) {
-        padding-top: 2rem;
-      }
-      @include respond(b-phone) {
-        padding: 0;
-      }
-      h2{
-        @include respond(tab-land) {
-          text-align: center;
-          padding-bottom: 2rem;
-        }
-
-      }
-
-    }
+ 
   }
+ 
+  //collaborators section content
+  .section-content { 
+ 
+    // display: flex;
+    @include respond(tab-land) {
+      justify-content: center;
+      align-items: center;
+      }
+      //collaborators section content header
+      &__header {}
+      //collaborators section content info
+      &__info {
+        ul{
+          list-style: circle !important;
+        }
+      }
+      //collaborators section content image
+      &__image { 
+        max-width: 20rem;
+        img{
+          @include image-shadows;
+        }
+       }
+      //collaborators section content nav buttons
+      &__nav-buttons {
+        display: flex;
+        width: 80%;
+        justify-content: flex-end;
+      }
+     
+  }
+
+ 
+
 }

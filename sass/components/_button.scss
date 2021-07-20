@@ -1,107 +1,80 @@
+//BUTTONS
+.button-item {
+  text-align: center;
+  //button settings
+  .btn {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+    border-radius: 0.8rem;
+    letter-spacing: 0.2rem;
+    transition: 1s;
+    padding: 1rem 2rem;
+    color: $color-primary-black-background;
+    font-size: 2.5rem;
+    //border: solid rgba(163, 163, 163, 0.137);
+    @include respond(s-desktop) {
+      font-size: 3rem;
+    }
+    font-weight: bold;
+    -webkit-box-shadow: 0px 8px 8px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 8px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 8px -5px rgba(0,0,0,0.75);   
+    @include btn-span-keyframes-animation;
+    &:hover {
+      @include button-hover-effect(#131212ec, $color-primary-gold);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.2rem;
+      left: 0.2rem;
+      bottom: 0.2rem;
+      width: 50%;
+      background: #2ad31a0a;
+    }
+  }
 
-    /*----------button----------*/
-    .button-item{
-      text-align: center;      
-      .btn {   
-          cursor: pointer;
-          border: 0.5px solid $color-primary-gold;           
-          overflow: hidden;
-          background: none;
-          transition: 1s;
-          letter-spacing: 0.2rem; 
+  .btn-small{
+    font-size: 1.7rem;
+    padding: .6rem 1rem;
+    min-width: 14rem;
+    
+   @include respond(s-desktop) {
+    font-size: 1.5rem;
+    }
+ }
 
+ .btn-medium{
+  font-size: 1.7rem;
+  @include respond(s-desktop) {
+    font-size: 2rem;
+    }
+
+ }
+
+  .btn-big{
+     font-size: 2.5rem;
+    @include respond(s-desktop) {
+       font-size: 3rem;
+     }
+  }
+
+}
+
+
+
+#btn-get-involved{
+  .row{
+    @include respond(tab-land) {
+      box-shadow: none !important;
+      padding: 0 !important;
       }
-
-  
-  
-      .get-involved {
-            position: relative;
-            display: inline-block;
-            //top: 50%;
-           // left: 50%;
-            //transform: translate(-50%,-50%);
-            padding: 1rem 4rem; 
-            font-size: 2rem; 
-            border-radius: 0.8rem; 
-            text-decoration: none;
-            @include respond(m-phone) {
-              padding: 1rem 2rem;
-          }
-          @include respond(s-phone) {
-            padding: 1rem 1.5rem;
-        }
-            &:hover {         
-              @include scale-up;
-          }
-
-            &--transparent{
-              color: $color-primary-white;
-              border: solid $color-primary-white 0.2rem;
-              &:hover {
-                @include button-hover-effect(#ffffff61, $color-primary-green);
-              }
-            }
-            &--green{
-              color: $color-primary-black-background;
-              text-shadow: 0.1rem 0.1rem $primary-color-gray-font; 
-              margin-top: 5rem;
-              &:hover{
-                @include button-hover-effect(#71d1568e, $color-primary-green);
-                color: $color-primary-black-background;
-                text-shadow: none;
-                font-weight: bold;
-              }  
-            }
-         
-  
-          &::before {
-              content: '';
-              position: absolute;
-              top: 0.2rem;
-              left: 0.2rem;
-              bottom: 0.2rem;
-              width: 50%;
-              background: #2ad31a0a;
-          }
-          @include btn-span-keyframes-animation
-      }//get-involved END
-  
-  
-  
-  
-      .read-more {
-        display: inline-block;
-          position: relative;
-          text-decoration: none;
-          padding: 1rem 0;
-          margin-top: 5rem;
-          width: 17rem;
-          border: 1px solid $color-primary-gold;
-          border-radius: 1rem;
-          color: $color-primary-black-background; 
-          font-weight: bold;
-          text-align: center;
-          
-          &:hover {
-              @include button-hover-effect($color-primary-blue-transparent, $color-primary-black-background); 
-              text-shadow: none;
-          }
-  
-          &::before {
-              content: '';
-              position: absolute;
-              top: 0.2rem;
-              left: 0.2rem;
-              bottom: 0.2rem;
-              width: 50%;
-              background: $color-primary-light-blue-transparent;
-          }
-          @include btn-span-keyframes-animation
-
-      }//read-more END
-  
-  
-  
-  }//button-item END
-
+  }
+  .get-involved-button{
+    justify-content: center !important;
+  }
+}
 

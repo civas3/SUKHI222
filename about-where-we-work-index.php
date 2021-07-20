@@ -5,68 +5,61 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
+    <?php include("includes/head-tag-links.php");?>
+    <?php include("includes/site-pages-meta/meta-about-where-we-work-index.php");?>
 
-    <title>US-BASED INTERNATIONAL NON-PROFIT</title>
-    <meta name="description" content="SUKHI 222 works and provides services to support the measures to be used as factors for
-implementing the United Nations Sustainable Development Goals (SDGs).">
+
 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav top-nav-black">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-noimage"></div>
-        </div>
 
-        <div class="intro no-image">
-            <h1>
-                SUKHI 222 WHERE WE WORK INDEX
-            </h1>
-        </div>
-    </div>
 
-    <div class="main-wrapper">
-        <div class="wrapper-content page-index">
-            <div class="page-index__item">
-                <ul>
-                    <li>
-                        <a href="where-we-work-headquarters.php">
-                            <h2>Headquarters</h2>
-                        </a>
-                    </li>
-                </ul>
+    <header id="header">
+
+        <div class="header-content">
+            <div class="header-content__image">
+                <div class="header-noimage"></div>
             </div>
-            <div class="page-index__item">
-                <ol>
-                    Countries:
-                    <li>
-                        <a href="where-we-work-australia.php">
-                            <h2>Australia</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="where-we-work-cameroon.php">
-                            <h2>Cameroon</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="where-we-work-ghana.php">
-                            <h2>Ghana</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="where-we-work-nepal.php">
-                            <h2>Nepal</h2>
-                        </a>
-                    </li>
-                </ol>
+
+            <div class="header-content__title">
+                <h1>SUKHI 222 WHERE WE WORK INDEX</h1>
             </div>
         </div>
-    </div>
+
+        <nav id="menu" class="navbar">
+            <?php include 'includes/site-sections/header.php'; ?>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+            <div class="sitemap">
+                    <!-- ABOUT WHERE WE WORK INDEX -->
+                    <div class="sitemap-item">
+                        <div class="sitemap-item__header">
+                            <h2><u>REGIONS</u></h2>
+                        </div>
+                        <div class="sitemap-item__content">
+                            <ul>
+                                <h3>NORTH AMERICA</h3>
+                                <li><a href="about-where-we-work-index.php">USA (Headquarters)</a></li>
+                            </ul>
+                            <ul>
+                                <h3>OCEANIA</h3>
+                                <li><a href="about-where-we-work-australia.php">Australia</a></li>
+                            </ul>
+                            <ul>
+                                <h3>AFRICA</h3>
+                                <li><a href="about-where-we-work-cameroon.php">Cameroon</a></li>
+                                <li><a href="about-where-we-work-ghana.php">Ghana</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </main>
 
     <div class="sign-up-newsletter">
         <?php include 'includes/site-sections/newsletter.php'; ?>
@@ -75,7 +68,7 @@ implementing the United Nations Sustainable Development Goals (SDGs).">
     <footer class="footer">
         <?php include 'includes/site-sections/footer.php'; ?>
     </footer>
-    <div class="copy-right">
+    <div class="copy-rights">
         <?php include 'includes/site-sections/copyright.php'; ?>
     </div>
 

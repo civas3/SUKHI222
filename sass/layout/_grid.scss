@@ -1,15 +1,255 @@
-.main-wrapper {
-    width: 90%;
-    margin: auto;
-    padding-top: 8rem;
-    .wrapper-content {
-        display: flex;
-        flex-wrap: wrap;
-        flex-shrink: 0;
-        justify-content: space-around;
-     
-      }
-    .spacer {
-      height: 25rem;
+//GRID
+//grid sectiot
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:first-child {
+    margin-top: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-bottom: 12.5rem;
+  @include respond(tab-port) {
+    &:first-child {
+      margin-top: 17.5rem;
+    }
+    margin-bottom: 17.5rem;
+  }
+}
+//grid container
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  &-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+//grid row
+.row {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  
+  @include respond(tab-port) {
+    max-width: 80%;
+    flex-direction: row;
+  }
+  @include respond(s-desktop) {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include respond(m-desktop) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include respond(l-desktop){
+    width: 70%;
+  }
+ 
+}
+
+//grid columns
+.col {
+  width: 100%;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+//grid columns tablet view
+@include respond(tab-port) {
+  .col-tab {
+    width: 100%;
+  }
+  .col-1-tab {
+    width: 8.33%;
+  }
+  .col-2-tab {
+    width: 16.66%;
+  }
+  .col-3-tab {
+    width: 25%;
+  }
+  .col-4-tab {
+    width: 33.33%;
+  }
+  .col-5-tab {
+    width: 41.66%;
+  }
+  .col-6-tab {
+    width: 50%;
+  }
+  .col-7-tab {
+    width: 58.33%;
+  }
+  .col-8-tab {
+    width: 66.66%;
+  }
+  .col-9-tab {
+    width: 75%;
+  }
+  .col-10-tab {
+    width: 83.33%;
+  }
+  .col-11-tab {
+    width: 91.66%;
+  }
+  .col-12-tab {
+    width: 100%;
+  }
+}
+
+//grid columns tablet view
+@include respond(s-desktio) {
+
+  .col-s-desktop {
+    width: 100%;
+  }
+  .col-1-s-desktop {
+    width: 8.33%;
+  }
+  .col-2-s-desktop {
+    width: 16.66%;
+  }
+  .col-3-s-desktop {
+    width: 25%;
+  }
+  .col-4-s-desktop {
+    width: 33.33%;
+  }
+  .col-5-s-desktop {
+    width: 41.66%;
+  }
+  .col-6-s-desktop {
+    width: 50%;
+  }
+  .col-7-s-desktop {
+    width: 58.33%;
+  }
+  .col-8-s-desktop {
+    width: 66.66%;
+  }
+  .col-9-s-desktop {
+    width: 75%;
+  }
+  .col-10-s-desktop {
+    width: 83.33%;
+  }
+  .col-11-s-desktop {
+    width: 91.66%;
+  }
+  .col-12-s-desktop {
+    width: 100%;
+  }
+}
+
+
+//grid section content
+.section-content,
+.article-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond(tab-port) {
+   // padding: 0 5rem;
+   
+  }
+ 
+  //grid section content header
+  &__header {
+    width: 100%;
+  }
+  //grid section info
+  &__info {
+    width: 100%;
+    &:not(:first-child) {
+      margin: 1rem 0;
+    }
+    ol, ul{
+      padding-left: 2rem;
     }
   }
+  //grid section image
+  &__image {
+    &:not(:first-child) {
+      margin: 1rem 0;
+    }
+    //grid section details
+    &--details {
+      display: flex;
+      flex-direction: column;
+      @include respond(tab-land) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+    img {
+      width: 100%;
+      min-height: auto;
+    }
+  }
+  &__nav-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    @include respond(tab-land) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    h6{
+      color: $primary-color-gray-font;
+    }
+    
+  }
+}

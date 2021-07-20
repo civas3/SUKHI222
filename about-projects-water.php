@@ -5,95 +5,113 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
-
-    <title>A MINIMUM OF 2 GALLONS A DAY OF CLEAN WATER FOR EVERY BODY AND MIND</title>
-    <meta name="description"
-        content="Using technology and sound practices we aim to foster a healthy and sustainable food and water supply throughout the planet with cooperation of all stake holders. We believe when basic needs are met, that the individual becomes sustainable and is able to contribute back to a civil society.">
+    <?php include("includes/head-tag-links.php");?>
+    <?php include("includes/site-pages-meta/meta-about-projects-water.php");?>
 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
 
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-image projects-water-image"></div>
-        </div>
-
-        <div class="intro">
-            <h1>SUKHI 222 WATER PROJECTS</h1>
-        </div>
-    </div>
-
-    <div class="main-wrapper">
-        <div class="wrapper-content projects">
-
-            <button class="accordion active">
-                <h2>OUR VISION</h2>
-            </button>
-            <div class="panel show">
-                <div class="accordian-section--item">
-                    <p>We base our actions on the most urgent need and the most sustainable
-                        practices to supply a minimum of 2 gallons of clean water per person per day.
-                    </p>
-                    <br>
-                    <p>When possible we collaborate with other NGOs to achieve our common missions.
-                        We work with the local community leaders to ensure long-term success of our
-                        projects.
-                    </p>
-
-                </div>
+    <header id="header">
+    <div class="header-content">
+            <div class="header-content__image">
+                <div class="header-image projects-water-header-bg"></div>
             </div>
 
-            <button class="accordion"><img src="<?php echo cdnURL ?>/images/flag-icons/ghana.png" alt="Ghana flag">
-                <h2>GHANA</h2>
-            </button>
-            <div class="panel">
-                <div class="accordian-section">
-                    <div class="accordian-section--item">
-                        <h3>NORTHERN COMMUNITIES</h3>
-                        <div class="gold-border"></div>
-                        <img src="<?php echo cdnURL ?>/images/projects/water/ghana/ghana-northern-communities.png"
-                            alt="">
-                        <p>SUKHI 222 GHANA, an NGO geared toward solving water problems has been all out
-                            in its strategic operations in Ghana, specifically at the Northern Communities
-                            in the country. As popularly known, water is life. But the sources of water in
-                            these identified communities rather deteriorate the lives of the inhabitants
-                            than being life ameliorating to them.</p>
-                        <div class="button-item">
-                            <a class="btn read-more" href="about-projects-water-ghana-northern-communities.php">
-                                <span class="span5"></span>
-                                <span class="span5"></span>
-                                <span class="span5"></span>
-                                <span class="span5"></span>Read More..</a>
+            <div class="header-content__title">
+                <h1>SUKHI 222 WATER PROJECTS</h1>
+            </div>
+        </div>
+        <nav id="menu" class="navbar">
+            <?php include 'includes/site-sections/header.php'; ?>
+        </nav>
+
+    </header>
+    
+    <main>
+        <div class="container">
+            <!--SECTION our vision-->
+            <section>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-content">
+                            <div class="section-content__header">
+                                <h2>OUR VISION</h2>
+                                <div class="gold-border"></div>
+                            </div>
+                            <div class="section-content__info">
+                                <p>We base our actions on the most urgent need and the most sustainable
+                                    practices to supply a minimum of 2 gallons of clean water per person per day.
+                                </p>
+                                <p>When possible we collaborate with other NGOs to achieve our common missions.
+                                    We work with the local community leaders to ensure long-term success of our
+                                    projects.
+                                </p>
+                            </div>
+
                         </div>
                     </div>
+                    <!--col-ends-->
                 </div>
-            </div>
-            <!-- <button class="accordion"><h4>TITLE </h4></button> <div class="panel"> <div
-                class="accordian-section"> <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Rem ipsam impedit, enim optio voluptates nulla recusandae? Cum consequatur
-                minus eaque incidunt assumenda, qui at voluptas architecto officiis veniam?
-                Aspernatur, ipsam!</p> </div> </div> <button class="accordion"><h4>TITLE
-                </h4></button> <div class="panel"> <div class="accordian-section"> <p>Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Rem ipsam impedit, enim optio
-                voluptates nulla recusandae? Cum consequatur minus eaque incidunt assumenda, qui
-                at voluptas architecto officiis veniam? Aspernatur, ipsam!</p> </div> </div>
-                <button class="accordion"><h4>TITLE </h4></button> <div class="panel"> <div
-                class="accordian-section"> <p>Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Rem ipsam impedit, enim optio voluptates nulla recusandae? Cum consequatur
-                minus eaque incidunt assumenda, qui at voluptas architecto officiis veniam?
-                Aspernatur, ipsam!</p> </div> </div> <button class="accordion"><h4>TITLE
-                </h4></button> <div class="panel"> <div class="accordian-section"> <p>Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Rem ipsam impedit, enim optio
-                voluptates nulla recusandae? Cum consequatur minus eaque incidunt assumenda, qui
-                at voluptas architecto officiis veniam? Aspernatur, ipsam!</p> </div> </div>-->
+            </section>
+            <!--SECTION Ghana projects-->
+            <section class="projects">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-content">
+                            <div class="section-content__header">
+                                <h2>GHANA WATER PROJECTS</h2>
+                                <div class="gold-border"></div>
+                            </div>
+                            <div class="section-content__info">
+                                <div class="accordion">
+                                    <!--accordion - ghana-->
+                                    <button class="accordion-button active"><img
+                                            src="<?php echo cdnURL ?>/images/flag-icons/ghana.png" alt="Ghana flag">
+                                            <h3>NORTHERN COMMUNITIES</h3>
+                                    </button>
+                                    <div class="accordion-panel show">   
+                                            <div class="accordion-panel__image">
+                                                 <img src="<?php echo cdnURL ?>/images/projects/water/ghana/ghana-northern-communities.png"
+                                                    alt="Ghana water project ">
+                                            </div>
+                                            <div class="accordion-panel__info">
+                                                     <p>SUKHI 222 GHANA, an NGO geared toward solving water problems has been
+                                                        all out
+                                                        in its strategic operations in Ghana, specifically at the Northern
+                                                        Communities
+                                                        in the country. As popularly known, water is life. But the sources
+                                                        of water in
+                                                        these identified communities rather deteriorate the lives of the
+                                                        inhabitants
+                                                        than being life ameliorating to them.
+                                                    </p>
+                                            </div>                 
+                                            <div class="button-item">
+                                                    <a class="btn btn-medium"
+                                                        href="about-projects-water-ghana-northern-communities.php">
+                                                        <span class="btn-span"></span>
+                                                        <span class="btn-span"></span>
+                                                        <span class="btn-span"></span>
+                                                        <span class="btn-span"></span>Read More..
+                                                    </a>
+                                         </div>  
+                                    </div>                                        
+                                </div>
+                                <!--projection-accordion-ends-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--col-ends-->
+                </div>
+            </section>
+
 
         </div>
-    </div>
+
+        <!--container-ends-->
+    </main>
+
 
     <!---->
     <div class="sign-up-newsletter">
@@ -102,7 +120,7 @@
     <footer class="footer">
         <?php include 'includes/site-sections/footer.php'; ?>
     </footer>
-    <div class="copy-right">
+    <div class="copy-rights">
         <?php include 'includes/site-sections/copyright.php'; ?>
     </div>
 

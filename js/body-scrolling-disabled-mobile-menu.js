@@ -1,8 +1,9 @@
-function lockScroll() {
-    if ($('body').hasClass('lock-scroll')) {
-        $('body').removeClass('lock-scroll');
-    }
-    else {
-        $('body').addClass('lock-scroll');
-    }
-}
+
+const body = document.querySelector("body");
+const toggleMenu = document.querySelector(".menu-icon");
+
+  toggleMenu.addEventListener("click", () => {
+    body.classList.toggle("lock-scroll");
+  });
+
+  

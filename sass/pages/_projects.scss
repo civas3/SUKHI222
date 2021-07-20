@@ -1,53 +1,8 @@
-
-.projects-water-image {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-black-background, 0.3),
-      rgba($color-primary-black-background, 0.3)
-    ),
-    url(../images/header/projects-water-header.jpg);
-}
-//POJECTS
-.projects{ 
-    padding: 5rem 0 10rem 0;
-    
-    button{
-        img{
-            display: block;
-            position: absolute;
+.projects{
+    .section-content{
+        .button-item{
+            margin-top: 2rem;
+            margin-bottom: 1rem;
         }
-        h2{
-          @include margin-left-right-auto;
-      }
     }
-   
-  .panel {
-    @include respond(b-phone) {
-      padding: 1.8rem 0;
-    }
-
-    .accordian-section--item {
-      width: 70%;
-      @include respond(tab-land) {
-        width: 90%;
-      }
-      @include respond(b-phone) {
-        width: 100%;
-      }
-      padding: 4rem 0;
-      border-radius: 20rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      @include margin-left-right-auto;
-   
-      img {
-        width: 85%;
-        padding: 1rem 0 2.8rem 0;
-        @include respond(b-phone) {
-          width: 100%;     
-        }
-      }  
-    }
-  }
 }

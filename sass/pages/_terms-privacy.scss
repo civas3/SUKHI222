@@ -1,29 +1,31 @@
 //TERMS-PRIVACY
-.terms-privacy {
-  &__item {
-    width: 80vw;
-    margin-top: 3rem;
-    @include respond(b-phone) {
-      width: 80vw;
-      margin-top: 5rem;
-    }
-    h2{
-      line-height: 5rem;
-      @include respond(b-phone) {
-        padding-bottom: 1rem;
-      }
-
-
-    }
-    ul {
-      list-style-type: none;
-      @include respond(b-phone) {
+#terms-privacy {
+  margin-top: 15rem;
+  section{
+    margin: 0;
+    margin-top: 5rem;
+  }
+  .section-content{
+    &__header{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      h2{
+        text-align: left;
         margin: 0;
         padding: 0;
       }
-  
+    
+    }
+    &__info{
+      max-width: 70ch;
+      p{
+        margin: 0;
+      }
+      ul{
+        list-style: none;
+      }
     }
   }
-
 
 }

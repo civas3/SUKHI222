@@ -2,80 +2,102 @@
 
 
 /* accordian */
-.accordion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $color-primary-white;
-  color: $color-primary-black-background;
-  cursor: pointer;
-  padding: 0.1rem 1.8rem ;
-  width: 100%;
-  text-align: left;
-  border: none;
-  border-radius: 0.5rem;
-  outline: none;
-  transition: 0.3s;
-  &:hover{
-    background-color: $color-primary-blue-transparent;
-  }
-  &.active{
-    background-color: $color-primary-blue-transparent;
-    font-weight: bold;
-  }
-
-}
-
-button{
-  h2{
-    padding-top: 2rem;
-  }
-  &:first-of-type {
+.accordion {  
     border-radius: 0.8rem 0.8rem 0 0;
+    padding-bottom: 2rem;
+    @include element-full-border-shadow;
+     //accordion button
+  &-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #efefef;
+    
+    &:hover, &.active{
+      background-color: darken($color:#efefef, $amount: 8%);
+     }
+      &:first-of-type {
+        border-radius: 0.8rem 0.8rem 0 0;
+      }
+  /* Unicode character for "plus" sign (+) */
+      &:after {
+        content: '+';
+        color: $color-primary-gold;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        font-size: 150%;
+      }
+  /* Unicode character for "minus" sign (-) */
+      &.active:after {
+        content: "-";
+      }
+    h3{
+      margin: 0;
+      padding: 0 !important;
+    }  
   }
-  &:last-of-type {
-    border-radius: 0 0 1rem 1rem;
-  }
-  &:after {
-    content: '+';
-    /* Unicode character for "plus" sign (+) */
-    color: $color-primary-gold;
-    margin-left: 0.5rem;
-    font-size: 150%;
+  //accordion panel
+  &-panel{
+    justify-content: center;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    // transition: 2.7s;
 
-  }
-  &:hover:after {
-    color: $color-primary-gold;
-  }
-  &.active:after {
-    content: "-";
-    /* Unicode character for "minus" sign (-) */
-  }
-}
+    @include element-right-border-shadow;
+      &:last-of-type {
+          border-bottom: #efefef solid 0.5rem;
+          border-radius: 0 0 1rem 1rem;
+      }
+    &__image{
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0 3rem 0;
+      width: 100%;
+  
+      img{
+        width: 100%;
+        height: 100% !important;
+        @include respond(s-desktop) {
+          width: auto;
+        }
+      }
 
-.panel {
-  padding: 1.8rem 1.8rem;
-  background-color: $color-primary-white;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 2.5s ease-in-out;
-  @include respond(b-phone) {
-    transition: all 0.5s ease-in-out;
-
+      }  
+    &__info{
+        max-width: 104.8rem !important;
+        } 
   }
 
   
-  opacity: 0;
-  &:last-of-type {
-    border-radius: 0 0 1rem 1rem;
-  }
-}
-
 .show {
   display: block;
   opacity: 1;
   max-height: fit-content;
+  // transition: 0.7s;
+  border-left: #efefef solid 0.5rem;
+  border-right: #efefef solid 0.5rem;
+  min-width: 29.7rem;
+  padding: 1rem 1.4rem;
+  @include respond(tab-port) {
+    width: 60%;
+    margin: 5rem auto;
+  }
+
+  @include respond(s-desktop) {
+    width: 80%;
+  }
+
   /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+}
+  
 }
 
 /* end accordian */

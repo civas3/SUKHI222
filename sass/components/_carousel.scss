@@ -3,11 +3,11 @@
 .carousel{
     width: 90vw; 
     overflow: hidden !important;
-    @include margin-left-right-auto;
+    @include m-auto;
   }
   #clients {
       display: block;
-      @include margin-left-right-auto;
+      @include m-auto;
   }
   
   #clients .clients-wrap {
@@ -21,7 +21,7 @@
       display: block;
       list-style: none;
       position: relative;
-      @include margin-left-right-auto;
+      @include m-auto;
   }
   
   #clients .clients-wrap ul li {

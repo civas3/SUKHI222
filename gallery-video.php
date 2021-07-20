@@ -5,46 +5,73 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
+    <?php include("includes/head-tag-links.php");?>
+    <?php include("includes/site-pages-meta/meta-gallery-video.php");?>
 
-    <title>SUKHI 222 | VIDEO GALLERY</title>
-    <meta name="description" content="">
-
+ 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
 
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-image video-image"></div>
-        </div>
 
-        <div class="intro">
-            <h1>SUKHI 222 VIDEO GALLERY</h1>
-        </div>
-    </div>
+    <header id="header">
 
-    <div class="main-wrapper">
-        <div class="wrapper-content gallery">
-            <div class="gallery__item">
-                <h2>222 GOES TO DC 3/2019</h2>
-                <div class="gold-border"></div>
+        <div class="header-content">
+            <div class="header-content__image">
+                <div class="header-image gallery-video-header-bg"></div>
+            </div>
 
-                <iframe class="video-gallery" width="560" height="315"
-                    src="https://www.youtube-nocookie.com/embed/RLpj1nAzECc?rel=0" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen="allowfullscreen"></iframe>
-                <p>
-                    <a href="https://www.youtube.com/watch?v=RLpj1nAzECc&list=PLYruQHOOSTwMxNmCvZcEdk7BjwU_zI8jQ"
-                        target="_blank">
-                        Click here to view all videos at our Youtube channel</a>
-                </p>
+            <div class="header-content__title">
+                <h1>SUKHI 222 VIDEO GALLERY</h1>
             </div>
         </div>
-    </div>
+
+        <nav id="menu" class="navbar">
+            <?php include 'includes/site-sections/header.php'; ?>
+        </nav>
+
+
+    </header>
+
+    <main>
+        <div class="container">
+            <!--SECTION 222 GOES TO DC 3/2019-->
+            <section class="gallery">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-content">
+                            <div class="section-content__header">
+                                <h2>222 GOES TO DC 3/2019</h2>
+                                <div class="gold-border"></div>
+                            </div>
+                            <div class="section-content__image">
+                               
+                                    <iframe class="video-gallery" 
+                                        src="https://www.youtube-nocookie.com/embed/RLpj1nAzECc?rel=0" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen="allowfullscreen"></iframe>
+                               
+                            </div>
+                            <div class="section-content__nav-buttons">
+                                     <div class="button-item">
+                                                <a class="btn btn-small" target="_blank" href="https://www.youtube.com/watch?v=RLpj1nAzECc&list=PLYruQHOOSTwMxNmCvZcEdk7BjwU_zI8jQ">
+                                                <span class="btn-span"></span>
+                                                <span class="btn-span"></span>
+                                                <span class="btn-span"></span>
+                                                <span class="btn-span"></span>Gallery</a>
+                                                <h6>Youtube page</h6>
+                                        </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--col-ends-->
+                </div>
+            </section>
+ 
+        </div>
+        <!--container-ends-->
+    </main>
 
     <div class="sign-up-newsletter">
         <?php include 'includes/site-sections/newsletter.php'; ?>
@@ -52,7 +79,7 @@
     <footer class="footer">
         <?php include 'includes/site-sections/footer.php'; ?>
     </footer>
-    <div class="copy-right">
+    <div class="copy-rights">
         <?php include 'includes/site-sections/copyright.php'; ?>
     </div>
 

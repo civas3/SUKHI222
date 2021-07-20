@@ -1,78 +1,129 @@
-.contact-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/contact-header.jpg);
-}
 
-.contact-form {
-  @include respond(tab-land) {
-    flex-direction: column-reverse;
-}
-  &__item {
+
+//CONTACT US
+#contact-us {
+  .container {
     display: flex;
-    width: 40vw;
-    .offices-details{
-      @include margin-left-right-auto;
-      @include respond(tab-land) {
-        padding-top: 10rem;
-      }
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include respond(s-desktop) {
+      flex-direction: row-reverse;
+    }
+    .row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  //aside 
+  aside {
+    display: flex;
+    justify-content: center;
+      align-items: flex-start;
+    margin-top: 15rem;
+    @include respond(tab-port) {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+
+    @include respond(s-desktop) {
+      display: flex;
+      flex: 0 0 33.333333%;
+      max-width: 0 0 33.333333%;
+      margin-top: 17.5rem;
+      margin-bottom: 0;
 
     }
-    @include respond(tab-land) {
-      width: 90vw;
+
+  //accordion panel
+  .accordion{
+    box-shadow: none;
+    @include element-right-border-shadow;
+
+    &-panel{
+      box-shadow: none;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
-    ul {
-      list-style-type: none;
-      padding-top: 2rem;
-      li {
-        a {
-          text-decoration: none;
-          color: $primary-color-gray-font;
-          &:hover {
-            color: $color-primary-blue;
-          }
-        }
+
+  }
+ 
+
+
+    .foundation-offices{
+      li{
+        list-style-type: none;
+      }
+      a{
+        text-decoration: none;
       }
     }
-    .container {
-      border-radius: 0.5rem;
-      background-color: $color-primary-white;
+  }
+
+  //section contact form
+  section {
+    flex: 0 0 66%;
+    width: 100%;
+    @include respond(s-desktop) {
+      margin-bottom: 0;
+    }
+    //contact-form
+    form {
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.8rem 0.8rem 0 0;
       padding: 2rem;
-      input[type="text"],
-      input[type="email"],
+      @include respond(tab-port) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+     
+      @include element-right-border-shadow;
+      background-color: #efefef;
+      //contact form inputs,labels, select and texarea
+      input,
       select,
       textarea {
         width: 100%;
         padding: 1rem;
         border: 0.1rem solid #ccc;
         border-radius: 0.4rem;
-        box-sizing: border-box;
-        margin-top: 0.6rem;
-        margin-bottom: 1.6rem;
-        resize: vertical;
-        font-size: 1.3rem;
-        &::placeholder {
-          font-size: 1.3rem;
-        }
-        option {
-          font-size: 1.3rem;
-        }
       }
-      input[type="submit"] {
+      label {
+        color: $primary-color-darker-gray-header;
+        margin-bottom: 0.3rem;
+        margin-top: 1.6rem;
+
+      }
+      //send button
+      .btn-send-message{
         background-color: $color-primary-green;
-        color: white;
         padding: 1.2rem 2rem;
-        border: none;
         border-radius: 0.4rem;
         cursor: pointer;
         transition: 0.5s all ease;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+
         &:hover {
           background-color: darken($color-primary-green, 10%);
-          color: $color-primary-black-background;
+          color: $color-primary-white;
         }
-        &::after {
-          background-color: darken($color-primary-green, 10%);
-        }
-      }    
+      }
+      //validation message
+      .validation-message{
+        color: red !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
     }
   }
 }

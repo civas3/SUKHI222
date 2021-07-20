@@ -1,217 +1,50 @@
-
-*
-*,
+    *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-    list-style-type: none;
+    box-sizing: border-box;
+   // list-style-type: none;
 }
 
 html {
-    width: 100%;
     //*62.5% is equal to 10px = 1rem 
     font-size: 62.5%;
     font-weight: 400;
     line-height: 1.5;
     color: $primary-color-gray-font;
     font-family: "Poppins", sans-serif;
-    overflow: auto;
-    overflow: initial;
-     body {
-      //border-box includes the padding and border in an element's total width and height
-      box-sizing: border-box; 
-      font-size: 1.8rem;
-      .top-nav{        
-          li{
-            font-size: 1.8rem;
-            line-height: 2.5rem;
-            color: $color-primary-white;
-            text-transform: uppercase;
-            
-            @include respond(big-desktop) {
-             // font-size: 180%;
-            }
-            @include respond(tab-land) {
-              font-size: 300%;
-              line-height: 130%;
-            }  
-            @include respond(tab-port) {
-              //font-size: 380%;
-
-            } 
-            @include respond(b-phone) {
-              font-size: 180%;
-            }  
-            @include respond(m-phone) {
-             // font-size: 135%;
-            }
-            @include respond(s-phone) {
-             // font-size: 165%;
-            }
-          
-          .sub-menu{ 
-            li{
-              font-size: 1.6rem;
-              line-height: 4rem;
-              text-transform: capitalize;
-              @include respond(big-desktop) {
-               // font-size: 90%;
-               // width: auto;
-               // line-height: 200%;
-              }
-              @include respond(tab-land) {
-                font-size: 90%;
-                line-height: 130%;              
-              }  
-              @include respond(tab-port) {
-                font-size: 75%;
-              } 
-            
-            }
-             
-          }
-          
-        }
-
-      }
-     
-         
-      .main-wrapper{
-        h1, h2, h3, h4, h5, h6 {
-          text-transform: uppercase;
-          @include respond(big-desktop) {
-            //font-size: 280% !important;
-            //line-height: 210% !important;
-          }
-          @include respond(tab-land) {
-            font-size: 200% !important;
-           // line-height: 165% !important;
-          }  
-          @include respond(tab-port) {
-            font-size: 160% !important;
-          //  line-height: 160% !important;
-          }  
-          @include respond(m-phone) {
-            font-size: 140% !important;
-          }
-          @include respond(s-phone) {
-            font-size: 130% !important; 
-          }      
-        }
-
-        p, li{
-          @include respond(big-desktop) {
-          //  font-size: 200% !important;
-           // line-height: 150% !important;
-          }
-          @include respond(tab-land) {
-            font-size: 120% !important;
-            line-height: 150% !important;
-          }  
-          @include respond(tab-port) {
-            line-height: 155% !important;
-          }
-          @include respond(m-phone) {
-            font-size: 110% !important;
-          }
-          @include respond(s-phone) {
-            font-size: 100% !important;
-          }
-      }   
+    body {
+        font-size: 1.8rem;
     }
-
-      .footer{
-        &__item{
-          h5, a, .fa{
-            font-size: 1.6rem;
-            @include respond(big-desktop) {
-             // font-size: 160%;
-            }
-            @include respond(tab-land) {
-              font-size: 100%;
-            }  
-            @include respond(tab-port) {
-              font-size: 140%;
-            } 
-            @include respond(b-phone) {
-              font-size: 130%;
-            }  
-            @include respond(s-phone) {
-               font-size: 110%;
-            }
-          }
-        
-        }
-      }
-    }
- }
-
- //PAGES
-
- .sukhi222__item, .volunteers__item{
-  ol li{
-    list-style-type: circle !important;
-    margin-top: 1rem;
-    //padding-left: 2rem;
-   } 
-  p{
-    margin-top: 1rem;
   }
- } 
-
- 
 
 
 
-//EVERY PAGE HEADER IMAGE FRAME
-.hero-video,
-.hero-image {
-  position: relative;
-  .bg-video,
-  .bg-image {
-    background-color: black;
-    height: 99%;
-    width: 100%;
-    margin: 0 auto;
-    z-index: 1;
-    &__content {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    img {
-      width: 100%;
-      max-width: 100% !important;
-    }
-}
-}
+
 //HEADER IMAGE FRAME OVERLAY
-.overlay { 
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background: #000000ec;
-  opacity: 0.5;
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #00000063;
+    opacity: 0.9;
 }
 
 //HEADER IMAGE H1 BOX
-.intro{
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -75%);
-  width: 90vw;
+.intro {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    width: 90vw;
 }
 
-
-
 //GOLD BORDER
-  .gold-border {
+.gold-border {
     color: $color-primary-gold;
     border-top-style: solid;
     border-top-width: 0.2rem !important;
@@ -219,23 +52,17 @@ html {
     margin: -1.5rem auto 1.5rem auto;
     padding-bottom: 0.8rem;
     @include respond(tab-land) {
-     margin: 1rem auto 3rem auto; 
+        margin: 1rem auto 3rem auto;
     }
-    
-  }
+}
 
-  //CLIP-TEXT
-  .clip-text{
+//CLIP-TEXT
+.clip-text {
     font-size: 10rem;
     background: url(https://media.giphy.com/media/JXHhI4o9NCf8k/giphy.gif);
     background-size: cover;
     background-position: center;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-  }
- 
+}
 
-
-
-
- 

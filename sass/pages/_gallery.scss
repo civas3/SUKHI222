@@ -1,79 +1,43 @@
-.art-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/art-header.jpg);
-}
-
-.video-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/video-header.jpg);
-}
-
-.gallery{
-  &__item{
-    text-align: center;
-    width: 80vw;
-    &:not(:first-child){
-      margin-top: 10rem;
-    }
- 
-    @include respond(tab-land) {
-      width: 90vw;
-    }
-    h2{
-      //padding-bottom: 2rem;
-      @include respond(b-phone) {
-        padding-bottom: 2rem;
-      }
-    
-
-
-    }
-    .art-gallery {
-      width: 40%;
-      border-radius: 50%;
-      @include border-black;
-      @include respond(b-phone) {
-        width: 90%;
+//GALLERY
+.gallery {
+  //gallery section
+  .section-content {
+    //section-content header
+    &__header{
+      max-width: 70rem;
+      text-align: center;
+    } 
+    //section-content image 
+    &__image {
+      max-width: 30rem;
+      @include respond(tab-port) {
+        max-width: 50rem;
       }
 
-    }
+      img, iframe {
+        display: flex;
+        @include image-shadows;
+      }
+      iframe{
+        width: 30rem;
+        height: 20rem;
+        @include respond(tab-port) {
+          width: 50rem;
+          height: 34.8rem;
+        }
 
-    .projects-gallery {
-      width: 40%;
-      @include border-black;
-      //@include border-white;
-      @include respond(b-phone) {
-        width: 90%;
+      }
+     @include image-shadows;
+    }
+    //gallery section nav buttons
+    &__nav-buttons {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .fa-contact-links{
+        justify-content: center;
       }
     }
-    .video-gallery {
-      width: 60%;
-      height: 100%;
-      @include border-black;
-      @include respond(b-phone) {
-        width: 90%;
-      }
-    }
-    p{
-      @include respond(b-phone) {
-        padding-top: 2rem;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: $primary-color-gray-font;
-      display: inline-block;
-      margin-top: 1rem;
-      &:hover {
-        //@include scale-up;
-        color: $color-primary-black-background;
-        font-weight: bold;
-      }
-   
-
-    }
-  
-
   }
 }
 

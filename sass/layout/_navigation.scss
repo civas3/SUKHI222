@@ -1,331 +1,278 @@
-.top-nav {
-  position: fixed;
-  width: 100%;
-  z-index: 99999999;
-}
-
-.top-nav-black{
-  background-color: transparent;
-}
-
-#tm:checked + .main-menu {
-  display: block;
-}
-
-#menu input[type="checkbox"],
-#menu ul span.drop-icon {
-  display: none;
-}
-
-#menu li,
-#toggle-menu,
-#menu .sub-menu {
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.05);
-  .span-jobs {
-    background-color: $color-primary-red;
-    color: $color-primary-white;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 1rem;
-    margin-left: 1rem;
-    border-radius: 0.3rem;
-  }
-}
-
-#menu li,
-#toggle-menu {
-  border-width: 0 0 0.1rem;
-}
-
-.logo {
-  height: 8rem;
-  position: absolute;
-  top: 0;
-  left: 2%;
-  @include respond(big-desktop) {
-    //height: 12rem;
-  }
-
-  @include respond(tab-land) {
-    height: 10rem;
-    top: 0;
-  }
-  @include respond(b-phone) {
-    height: 8rem;
-  }
-  @include respond(m-phone) {
-    //right: 8%;
-  }
-  a {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-}
-
-//toggle-menu
-.mobile-menu-nav {
-  @include respond(tab-land) {
-    height: 10rem !important;
-  }
-  @include respond(b-phone) {
-    height: 8rem !important;
-  }
-}
-
-#menu ul {
-  //all ul
-  margin: 0;
-  padding: 0;
-  border-bottom: gold solid 0.1rem;
+//NAVBAR
+.navbar {
   display: flex;
-  justify-content: flex-start;
-  li {
-    text-transform: uppercase;
-    @include respond(tab-land) {
-      width: 100%;
+  flex-direction: column;
+  border-top: $color-primary-gold solid 0.1rem;
+  z-index: 9999;
+  @include respond(tab-port) {
+    position: relative;
+    width: 100%;
     }
-  }
-}
 
-#menu {
-  .main-menu {
-    //first ul - main ul
-    display: none;
-    height: 75vh;
-    overflow: scroll;
+  @include respond(tab-land) {
+    flex-direction: row;
     background-color: $color-primary-black-background;
-    @include respond(tab-land) {
-      padding: 10rem 0 0 5rem;
-    }
-    @include respond(tab-port) {
-      padding: 7rem 0 0 1rem;
-    }
-    @include respond(b-phone) {
-      padding: 2rem 0 0 0;
-    }
+    border-bottom: $color-primary-gold solid 0.2rem;
   }
 
-  .sub-menu {
+
+  //LOGO
+  &-brand {
+    display: flex;
+    justify-content: center;
     background-color: $color-primary-black-background;
-    border-width: 0.1rem 0.1rem 0;
-    margin: 0 1.6rem;
-    border-left: $color-primary-gold dashed 0.1rem;
-    border-bottom: $color-primary-gold dashed 0.1rem;
-    display: none;
-    @include respond(b-phone) {
-      margin: 0 1.2rem;
-    }
+    border-bottom: $color-primary-gold 0.1rem solid;
     @include respond(tab-land) {
-      &::before {
-        //gives the chevron up on sub menu
-        content: "";
+      border-bottom: none;
+      margin-left: 3rem;
+    }
+    img {
+      height: 8rem;
+      width: auto;
+    }
+  }
+
+  //MOBILE MENU TOGGLE BUTTON
+  &-toggle {
+    position: absolute;
+    right: 5%;
+    @include respond(tab-land) {
+      display: none;
+    }
+
+    label {
+      -webkit-tap-highlight-color: transparent;
+    }
+    .menu-icon {
+      cursor: pointer;
+      z-index: 9999;
+      color: $color-primary-gold;
+      display: block;
+      .fa-toggle-off, .fa-toggle-on {
         position: absolute;
-        top: 6.2rem;
-        left: 3.9rem;
-        border: 1.5rem solid transparent;
-        border-bottom-color: $color-primary-gold;
-        @include respond(b-phone) {
-          top: 4.7rem;
-          left: 0.6rem;
-          border: 0.7rem solid transparent;
-          border-bottom-color: $color-primary-gold;
+        font-size: 4rem;
+        right: 0.5rem;
+        top: 2rem;
+      }
+      .fa-toggle-on {
+        display: none;
+      }
+
+      .fa::before {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  //NAVIGATION MENU
+  &-menu {
+    @include respond(tab-port) {
+      width: 40%;
+      -webkit-box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);
+      box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);   
+    }
+    @include respond(tab-land) {
+      box-shadow: none;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    //switch toggle displays mobile menu
+    #tm:checked + .navbar-menu__list {
+     // display: block;
+     //by having height 0 unchecked = slidedown animation effect
+     height: 75vh;
+     padding-top: 2rem;
+     @include respond(tab-port) {
+      height: 100vh;
+    }
+
+    }
+    //input checkbox element invisible
+    input[type="checkbox"],
+    ul span.drop-icon {
+      display: none;
+    }
+
+    //navbar menu main list
+    &__list {
+      list-style-type: none;
+      //display: none;
+     // height: 75vh;
+     transition: 1.2s;
+     height: 0;
+      overflow: scroll;
+      background-color: $color-primary-black-background;
+      border-bottom: $color-primary-gold 0.1rem solid;
+
+      @include respond(tab-land) {
+        display: flex;
+        padding-top: 2rem;
+        margin-right: 2rem;
+        height: auto;
+        border-bottom: none;
+        overflow: visible;
+        position: relative;
+        
+      }
+      //all li elements
+      li {
+        position: relative;
+      //all a elements
+        a {
+          display: block;
+          color: white;
+          padding: 1rem 1.6rem;
+          text-shadow: 0.1rem 0.1rem 0 rgba(100, 84, 84, 0.096);
+          text-decoration: none;
+          font-size: 3rem;
+          @include respond(tab-land) {
+            font-size: 1.8rem !important;
+          }
+         
         }
       }
     }
-    ul {
-      &::before {
-        top: 5.1rem;
-        left: 3rem;
-        @include respond(b-phone) {
-          top: 3.7rem;
-          left: 0.7rem;
+
+    //sub-menu
+    .sub-menu {
+      list-style-type: none;
+      background-color: $color-primary-black-background;
+      display: none;
+      margin: 0 1.2rem;
+      -webkit-box-shadow: -5px 0px 5px -4px rgba(244, 181, 34, 1);
+      -moz-box-shadow: -5px 0px 5px -4px rgba(244, 181, 34, 1);
+      box-shadow: -5px 0px 5px -4px rgba(244, 181, 34, 1);
+      @include respond(tab-land) {
+        position: absolute;
+        top: 103%;
+        left: -1rem;
+        z-index: 9999;
+        width: 20.5rem;
+        //box-shadow: none;
+        -webkit-box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);
+        box-shadow: 2px 5px 8px 0px rgba(0,0,0,0.75);   
+        border-bottom-left-radius: 1rem;
+        border-bottom: $color-primary-gold solid 0.2rem;
+          &:after {
+          //filled in the gap between li and submenu on hover
+          content: " ";
+          position: absolute;
+          top: -2rem;
+          left: 0;
+          width: 100%;
+          height: 2rem;
         }
       }
       li {
-        width: auto;
-        &:last-child {
-          border-width: 0;
+        &:active {
+          color: $color-primary-gold;
+        }
+        a {
+          font-size: 2.6rem;
+          &:hover{
+            color: $color-primary-gold;
+            background: #ffffff10;
+          }
         }
       }
     }
-  }
-}
 
-#menu li,
-#toggle-menu,
-#menu a {
-  position: relative;
-  display: block;
-  color: white;
-  text-shadow: 0.1rem 0.1rem 0 rgba(100, 84, 84, 0.096);
-  text-decoration: none;
-}
-
-#menu,
-#toggle-menu {
-  //background-color: $color-primary-black-background;
-  border-bottom: $color-primary-gold 0.1rem solid;
-  height: auto;
-  a {
-    padding: 1rem 1.6rem;
-  }
-}
-
-#menu input[type="checkbox"]:checked + .sub-menu {
-  display: block;
-}
-
-#menu .sub-menu a:hover {
-  color: gold;
-}
-
-#toggle-menu .drop-icon,
-#menu li label.drop-icon {
-  position: absolute;
-  right: 0.5rem;
-  top: 1rem;
-}
-
-#menu label.drop-icon,
-#toggle-menu span.drop-icon {
-  // border-radius: 50%;
-  width: 100vw;
-  height: 3rem;
-  text-align: center;
-  background-color: transparent;
-  text-shadow: 0 0 0 transparent;
-  color: gold;
-  font-size: 3rem;
-  text-align: right;
-  @include respond(tab-land) {
-    height: 7rem;
-    font-size: 8rem;
-  }
-  @include respond(b-phone) {
-    height: 4rem;
-    font-size: 3rem;
-  }
-}
-
-#menu .drop-icon {
-  line-height: 1;
-}
-
-@media only screen and (min-width: 64.1em) {
-  
-  /* 1024px ++*/
-  #menu {
-    li {
-      border-width: 0 0.1rem 0 0;
-      &:after {
-        /*filled in the gap between li and submenu on hover*/
-        content: " ";
+    //sub-sub-menu
+    .sub-sub-menu {
+      //gives the chevron arrow up
+      list-style-type: none;
+      &::before {
+        content: "";
         position: absolute;
-        bottom: -2rem;
-        left: 0;
-        width: 100%;
-        height: 2rem;
-        background: transparent;
-      }
-    }
-
-    .main-menu {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-right: 2rem;
-      height: 8rem;
-      overflow: visible;
-      background-color: transparent;
-
-      @include respond(big-desktop) {
-       // height: 12rem;
-      }
-      @include respond(tab-land) {
-        height: auto;
-      }
-      & :not(last-child) {
-        margin-right: 0.3rem;
-      }
-
-      .sub-menu {
-        border-width: 0;
-        margin: 0;
-        position: absolute;
-        top: 6.4rem;
-        left: 0;
-        width: 18.5rem;
-        z-index: 3000;
-        & :not(last-child) {
-          margin-right: 0;
-        }
-        &::before {
-          //gives the chevron up on sub menu
-          content: "";
-          position: absolute;
-          top: -2.6rem;
-          left: 3.9rem;
-          border: 1.2rem solid transparent;
-          border-bottom-color: $color-primary-gold;
-        }
-        @include respond(big-desktop) {
-         // top: 8.6rem;
-         // width: 30rem;
-        }
-
-        .sub-menu {
-          width: 23rem;
-          top: 0;
-          left: 100%;
-          &::before {
-            //gives the chevron up on sub menu
-            content: "";
-            position: absolute;
+        top: 4.7rem;
+        left: 0.5rem;
+        border: 0.6rem solid transparent;
+        border-bottom-color: $color-primary-gold;
+        @include respond(tab-land) {
+             //gives the chevron arrow left
             top: 1rem;
-            left: -2.5rem;
-            border: 1.2rem solid transparent;
+            left: -2.1rem;
+            border: 1rem solid transparent;
             border-right-color: $color-primary-gold;
+        }
+        }
+        @include respond(tab-land) {
+          position: absolute;
+          width: 21.5rem;
+          left: 94%;
+          top: 0;
+          border-top-right-radius: 1rem;
+          border-bottom-left-radius: 0;
+          &:after {
+            //filled in the gap between li and submenu on hover removed
+            display: none;
           }
-          @include respond(big-desktop) {
-            //width: 33rem;
           }
+      li {
+        a {
+          font-size: 2.2rem;
         }
       }
     }
-  }
 
-  #toggle-menu,
-  #menu label.drop-icon {
-    display: none;
-  }
-
-  #menu ul span.drop-icon {
-    display: inline-block;
-    color: gold;
-  }
-
-  #menu .sub-menu,
-  #menu input[type="checkbox"]:checked + .sub-menu {
-    display: none;
-  }
-
-  #menu .sub-menu li {
-    border-width: 0 0 0.1rem;
-    border-bottom: #ffffff13 dashed 0.1rem;
-    &:hover {
-      background-color: #ffffff13;
+    //when clicked on li element checkbox get checked
+    input[type="checkbox"]:checked + .sub-menu {
+      display: block;
     }
-    a {
-      padding: 0.2rem 1.5rem;
-    }
-  }
 
-  #menu li:hover > input[type="checkbox"] + .sub-menu {
+
+    //label element covers entire li element and activates on click affect
+    .drop-icon {
+      position: absolute;
+      right: 0.5rem;
+      top: 1rem;
+      color: $color-primary-black-background;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    // arrow down symbol next to li element that has submenu
+    .drop-icon-span{
+      color: $color-primary-gold;
+    }
+
+
+  }
+}
+
+//when navbar has class active (when clicked on the toggle button (JS))
+#menu.active {
+  .fa-toggle-on {
     display: block;
   }
+  .fa-toggle-off {
+    display: none;
+  }
+  overflow:hidden;
+}
 
-  .gold-underline {
+//desktop view - view sub menu on hover instead of click
+#menu li:hover > input[type="checkbox"] + .sub-menu {
+  @include respond(tab-land) {
+    display: block;
+  }
+}
+#menu li:focus > input[type="checkbox"] + .sub-menu {
+  @include respond(tab-land) {
+    display: block;
+  }
+}
+    
+
+
+//li menu underline animation
+#menu .gold-underline {
+  @include respond(tab-land) {
     position: relative;
     &:after {
       content: "";
@@ -339,76 +286,18 @@
       transition: width 0.8s ease;
       -webkit-transition: width 0.8s ease;
     }
-    &:hover:after {
+    &:hover:after, &:focus::after {
       width: 80%;
       left: 10%;
     }
   }
-
-  
-
-
-.no-dashed {
-  border-bottom: none !important;
 }
 
+//all menu label higlight on click transparent
+#menu li a label{
+  -webkit-tap-highlight-color: black !important;
 }
 
-
-
-.menu-icon {
-  color: #eee;
-  position: absolute;
-  top: 20%;
-  right: 5%;
-  transform: translate(-20%, -5%);
-  cursor: pointer;
-  z-index: 2000;
-  display: none;
-  color: $color-primary-gold;
-  @include respond(tab-port) {
-    top: 25%;
-  }
-  .fa-toggle-on{
-    font-size: 7rem;
-    @include respond(b-phone) {
-      font-size: 4rem;
-    }
-  }
-  .fa-toggle-off {
-    font-size: 7rem;
-    right: 15%;
-    @include respond(b-phone) {
-      font-size: 4rem;
-    }
-    // margin-top: 1rem;
-  }
-
-  @include respond(tab-land) {
-    display: block;
-    z-index: 99999999;
-    .fa-toggle-on {
-      display: none;
-    }
-  }
-}
-
-#menu.active {
-  //when we click on hamburger shows X JS
-   .fa-toggle-on{
-    display: block;
-
-  }
-  .fa-toggle-off {
-    display: none;
-
-  }
- 
-}
-
-.lock-scroll {
-  overflow: hidden;
-}
-
+//NAVBAR ENDS HERE
 
 

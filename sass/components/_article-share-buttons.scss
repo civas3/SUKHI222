@@ -1,0 +1,30 @@
+
+    .share-buttons{ 
+        margin-top: 5rem;
+        @include respond(tab-port){
+            flex-direction: row !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        &____header{
+         
+        }
+
+        &__button{      
+           margin-top: 3rem; 
+            img{
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+               &:hover{
+                @include scale-up;
+               }
+               
+            }
+
+        }
+           
+
+    }
+     

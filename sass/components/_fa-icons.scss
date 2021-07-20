@@ -1,56 +1,30 @@
-//TEXT INSIDE .FA INDEX PAGE
-.fa {
-  transition: 0.2s all ease;
-  padding: 0 1rem;
-  &:hover > span{
-    color: $color-primary-black-background;
-  }
-}
-
-
-//HOME - PAGE
-.fa-links {
-  text-align: center;
-  margin-top: 2.5rem;
-  @include respond(big-desktop) {
-     // margin-top: 4rem;
-  }
- 
-  @include respond(tab-land) {
-    margin-top: 6rem;
-  }
-  @include respond(m-phone) {
-    margin-top: 2.5rem;
-  }
-  .fa, .fas{
-     &:hover {
-       @include scale-up;
-      }
-
-   }
-
-  & :nth-child(1) .fa {
-    color: $color-primary-blue;
-  }
-
-  & :nth-child(2) .fa {
-    color: $color-primary-green;
-  }
-
-  & :nth-child(3) .fa {
-    color: $color-primary-red;
-  }
-}
+// //FA ICONS
 
 
 //WHERE WE WORK - PAGE
 .fa-contact-links {
-  text-align: right;
-  margin-top: 2rem;
-  @include respond(tab-land) {
-    text-align: center;
-    margin-top: 2rem;
+  font-size: 6rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  @include respond(tab-port) {
+    justify-content: center;
   }
+  @include respond(tab-land) {
+    justify-content: flex-end;
+    font-size: 5rem;
+  }
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+  //links
+  a{
+    @include respond(tab-port) {
+      padding: 1rem;
+    }
+  }
+  //fa icons
   .fa{
     &:hover{
       @include scale-up;
@@ -66,24 +40,50 @@
 }
 
 
-//FOOTER
+//FA footer icons
 .footer{
-  
   .fa-facebook {
     background: #3b5998;
     color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #3b5998, $amount: 10%);
+    }
   }
   .fa-twitter {
     background: #55acee;
     color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #55acee, $amount: 10%);
+    }
   }
   .fa-linkedin {
     background: #007bb5;
     color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #007bb5, $amount: 10%);
+    }
   }
   .fa-youtube {
     background: #bb0000;
     color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #bb0000, $amount: 10%);
+    }
+  }
+  .fa-instagram {
+    background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #e11bf3, $amount: 10%);
+    }
+  }
+  .fa-clubhouse {
+    background: #6515dd;
+    color: $color-primary-white;
+    &:hover{
+      background-color: darken($color: #6515dd, $amount: 10%);
+    }
   }
 }
 

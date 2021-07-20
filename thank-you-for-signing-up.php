@@ -5,30 +5,39 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
-
-    <meta name="googlebot" content="noindex">
-
+    <?php include("includes/head-tag-links.php");?>
 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav top-nav-black">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
 
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-noimage"></div>
-        </div>
+<header id="header"> </header>
 
-        <div class="main-wrapper">
+<div class="header-content">
+    <div class="header-content__image">
+        <div class="header-noimage"></div>
+    </div>
+
+  
+</div>
+
+<nav id="menu" class="navbar sticky">
+    <?php include 'includes/site-sections/header.php'; ?>
+</nav>
+
+</header>
+
+<main>
+
+</main>
+  
+  
 
             <div class="main-header">
-                <h1 style="color: #474545 !important;;">Thank you for signing up!</h1>
+                <h1 class="m-header">Thank you for signing up!</h1>
             </div>
-            <div class="wrapper-content"></div>
-        </div>
+      
+    
 
         <div class="sign-up-newsletter">
             <?php include 'includes/site-sections/newsletter.php'; ?>
@@ -36,12 +45,11 @@
         <footer class="footer">
             <?php include 'includes/site-sections/footer.php'; ?>
         </footer>
-        <div class="copy-right">
+        <div class="copy-rights">
             <?php include 'includes/site-sections/copyright.php'; ?>
         </div>
 
-        <!-- Java script -->
-        <?php include 'includes/site-features/js.php'; ?>
+ 
 
 </body>
 

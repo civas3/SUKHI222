@@ -5,55 +5,52 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
+    <?php include("includes/head-tag-links.php");?>
+    <?php include("includes/site-pages-meta/meta-gallery-index.php");?>
 
-    <title>SUKHI 222 | Human Rights Campaign</title>
-    <meta name="description" content="">
 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-noimage"></div>
-        </div>
 
-        <div class="intro no-image">
-            <h1>SUKHI 222 GALLERY INDEX</h1>
-        </div>
-    </div>
 
-    <div class="main-wrapper">
-        <div class="wrapper-content page-index">
-            <div class="page-index__item">
-                <ol>
-                    <li>
-                        <a href="art-gallery.php">
-                            <h2>Art</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="coming-soon.php">
-                            <h2>Events</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="projects-gallery.php">
-                            <h2>Projects</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="video-gallery.php">
-                            <h2>Video</h2>
-                        </a>
-                    </li>
-                </ol>
+    <header id="header">
+
+        <div class="header-content">
+            <div class="header-content__image">
+                <div class="header-noimage"></div>
+            </div>
+
+            <div class="header-content__title">
+                <h1>SUKHI 222 GALLERY INDEX</h1>
             </div>
         </div>
-    </div>
+
+        <nav id="menu" class="navbar">
+            <?php include 'includes/site-sections/header.php'; ?>
+        </nav>
+
+    </header>
+
+
+         <main>
+            <div class="sitemap">
+                    <!-- GALLERY INDEX -->
+                    <div class="sitemap-item">
+                        <div class="sitemap-item__header">
+                            <h2><u>GALLERIES</u></h2>
+                        </div>
+                        <div class="sitemap-item__content">
+                            <ul>
+                                <li><a href="gallery-art.php">Art Gallery</a></li>
+                                <li><a href="gallery-projects.php">Projects Gallery</a></li>
+                                <li><a href="gallery-video.php">Video Gallery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </main>
+
 
     <div class="sign-up-newsletter">
         <?php include 'includes/site-sections/newsletter.php'; ?>
@@ -62,12 +59,11 @@
     <footer class="footer">
         <?php include 'includes/site-sections/footer.php'; ?>
     </footer>
-    <div class="copy-right">
+    <div class="copy-rights">
         <?php include 'includes/site-sections/copyright.php'; ?>
     </div>
 
-    <!-- Java script -->
-    <?php include 'includes/site-features/js.php'; ?>
+ 
 </body>
 
 </html>

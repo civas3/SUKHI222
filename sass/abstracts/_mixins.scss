@@ -2,17 +2,16 @@
 
 Mixins are defined using the @mixin at-rule, which is written @mixin <name> { ... } or @mixin name(<arguments...>) { ... }. */
 
-
-
- // MEDIA QUERY MANAGER
+// MEDIA QUERY MANAGER
 /*
 0 - 320px:      Smaller mobile phones
-320 - 360px:    Medium mobile phones
-360 - 480px:    Biger mobile phones
+320 - 376px:    Medium mobile phones
+376 - 480px:    Biger mobile phones
 480 - 768px:    Tablet portrait
 768 - 1024px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
+1024 - 1280px:  small-desktop
+1280 - 1568px:  medium-desktop
+1568 - 1800px:  large-desktop
 
 
 $breakpoint arguement choices:
@@ -21,7 +20,9 @@ $breakpoint arguement choices:
 - b-phone
 - tab-port
 - tab-land
-- big-desktop
+- s-desktop
+- m-desktop
+- l-desktop
 
 
 
@@ -31,99 +32,71 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
-  @if $breakpoint == s-phone {
-      @media only screen and (max-width: 20em) { @content };      //320px
-  }
-  @if $breakpoint == m-phone{
-      @media only screen and (max-width: 22.5em) { @content };   //360px
-  }
-  @if $breakpoint == b-phone {
-      @media only screen and (max-width: 30em) { @content };     //480px
-  }
-  @if $breakpoint == tab-port {
-      @media only screen and (max-width: 48em) { @content };     //768px
-  }
- 
-  @if $breakpoint == tab-land {
-      @media only screen and (max-width: 64em) { @content };     //1024px
-  }
-  @if $breakpoint == big-desktop {
-      @media only screen and (min-width: 112.5em) { @content };  //1800px+
-  }
+    @if $breakpoint == s-phone {
+        @media only screen and (min-width: 20em) {
+            @content;
+        } //320px
+    }
+    @if $breakpoint == m-phone {
+        @media only screen and (min-width: 23.5em) {
+            @content;
+        } //376px
+    }
+    @if $breakpoint == b-phone {
+        @media only screen and (min-width: 30em) {
+            @content;
+        } //480px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (min-width: 48em) {
+            @content;
+        } //768px
+    }
+    @if $breakpoint == tab-port-reverse {
+        @media only screen and (min-width: 48em) {
+            @content;
+        } //768px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (min-width: 64em) {
+            @content;
+        } //1024px
+    }
+    @if $breakpoint == s-desktop {
+        @media only screen and (min-width: 80em) {
+            @content;
+        } //1280px
+    }
+    @if $breakpoint == m-desktop {
+        @media only screen and (min-width: 98em) {
+            @content;
+        } //1568px
+    }
+
+    @if $breakpoint == l-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        } //1800px+
+    }
 }
+
 //MARGIN LEFT/RIGHT AUTO
-@mixin margin-left-right-auto{
+@mixin m-auto {
     margin-left: auto;
     margin-right: auto;
 }
 
 //SCALE - UP
-@mixin scale-up{
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2); 
-    transform: scale(1.2);
+@mixin scale-up {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
     -webkit-filter: brightness(110%);
     -moz-filter: brightness(110%);
     -ms-filter: brightness(110%);
-    filter: brightness(110%);    
+    filter: brightness(110%);
 }
-
-//BORDERS
-@mixin border-white{
-    border: 0.1rem solid #ddd;
-    border-radius: 0.4rem;
-    padding: 0.5rem;
-    -webkit-box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-    box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-}
-
-@mixin border-black{
-    border: 0.1rem solid $color-primary-blue;
-    background-color: $color-primary-black-background;
-    padding: 1rem;
-    -webkit-box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-    box-shadow: -0.1rem 0.3rem 8.5rem -1.3rem rgba(0, 0, 0, 0.75);
-}
-
-
-//GET-INNCOLVED 
-@mixin tear-drop($color) {
-      border: 2.5rem solid $color;
-      -webkit-box-shadow: 1.8rem -1.6rem 4.7rem 0rem rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 1.8rem -1.6rem 4.7rem 0rem rgba(0, 0, 0, 0.75);
-      box-shadow: 1.8rem -1.6rem 4.7rem 0rem rgba(0, 0, 0, 0.75);
-      background-color: $color-primary-black-background;
-  }
-
-
-//IDEX GRID
-  @mixin grid-template($grid-area...){
-    min-height: 57rem;
-    display: grid;
-    grid-area: $grid-area;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem; 
-    @include respond(tab-land) {
-        margin-top: 15rem;
-    }   
-    @include respond(tab-port) {
-        margin-top: 8rem;
-    } 
-
-
-    }
-
-  @mixin grid-template-mobile($flex-direction...) {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: $flex-direction;
-     }
-
-
-
 
 //HERO-SLIDESHOW
 @mixin animation-delay($time...) {
@@ -132,124 +105,134 @@ ORDER: Base + typography > general layout + grid > page layout > components
     -o-animation-delay: $time;
     -ms-animation-delay: $time;
     animation-delay: $time;
-     }
+}
 
-//HEADER-IMAGE
-@mixin header-image-properties($height...) {
-    border-bottom-left-radius: 50% 30%;
-    border-bottom-right-radius: 50% 30%;
-    border-top-left-radius: 50% 20%;
-    border-top-right-radius: 50% 20%;
-    position: relative;
-    background-attachment: fixed;
-    background-position: 50% 0px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: $height;
-     }
+//element full border shadow
+@mixin element-full-border-shadow{
+    -webkit-box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.75);
+}
+
+
+//element right side border shadow
+@mixin element-right-border-shadow{
+    -webkit-box-shadow: 7px -7px 21px -6px rgba(148,143,148,1);
+    -moz-box-shadow: 7px -7px 21px -6px rgba(148,143,148,1);
+    box-shadow: 7px -7px 21px -6px rgba(148,143,148,1);
+}
+
+//section shadow
+@mixin section-bottom-shadow{
+    -webkit-box-shadow: -5px 21px 8px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 21px 8px -21px rgba(0,0,0,0.75);
+    box-shadow: -5px 21px 8px -21px rgba(0,0,0,0.75);
+     padding-bottom: 10rem;
+    //border-bottom: black solid 2px;
+} 
+
+//image shadow
+@mixin image-shadows{
+    -webkit-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 13px -2px rgba(0,0,0,0.75);
+    border: solid 0.2rem white;
+}
+
+
+
+
 
 //BUTTONS
-     @mixin button-hover-effect($color, $v-color...) {
-        background-color: $color;
-        box-shadow: 0rem 0rem 1rem $color, 0rem 0rem 1rem $color;
-        color: $v-color;
-        text-shadow: black 0.1rem 0.1rem;
-        @include scale-up;
-     }
+@mixin button-hover-effect($color, $v-color...) {
+    background-color: $color;
+    box-shadow: 0rem 0rem 1rem $color, 0rem 0rem 1rem $color;
+    color: $v-color;
+    text-shadow: black 0.1rem 0.1rem;
+    @include scale-up; 
+}
 
-
-
-    @mixin btn-span-keyframes-animation{
-        .span5{
-            &:nth-child(1) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 0.1rem;
-                background: linear-gradient(to right, $color-primary-gold, $color-primary-gold);
-                animation: animate5_1 2s linear infinite;
-                
-            }
-            @keyframes animate5_1 {
-                0% {
-                    transform: translateX(-100%);
-                }
-        
-                100% {
-                    transform: translateX(100%);
-                }
-            }
-            &:nth-child(2) {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 0.1rem;
-                height: 100%;
-                background: linear-gradient(to bottom, $color-primary-gold, $color-primary-gold);
-                animation: animate5_2 2s linear infinite;
-                animation-delay: 1s;
-            }
-        
-            @keyframes animate5_2 {
-                0% {
-                    transform: translateY(-100%);
-        
-                }
-        
-                100% {
-                    transform: translateY(100%);
-        
-                }
-            }
-            &:nth-child(3) {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 0.1rem;
-                background: linear-gradient(to left, $color-primary-gold, $color-primary-gold);
-                animation: animate5_3 2s linear infinite;
-            }
-        
-            @keyframes animate5_3 {
-                0% {
-                    transform: translateX(100%);
-        
-                }
-        
-                100% {
-                    transform: translateX(-100%);
-        
-                }
-            }
-
-            &:nth-child(4) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0.1rem;
-                height: 100%;
-                background: linear-gradient(to top, $color-primary-gold, $color-primary-gold);
-                animation: animate5_4 2s linear infinite;
-                animation-delay: 1s;
-            }
-        
-            @keyframes animate5_4 {
-                0% {
-                    transform: translateY(100%);
-        
-                }
-        
-                100% {
-                    transform: translateY(-100%);
-        
-                }
-            }
-
-
-
+//buutton animation
+@mixin btn-span-keyframes-animation {   
+    .btn-span {
+    
+        &:nth-child(1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0.12rem;
+            background: linear-gradient(to right, $color-primary-gold, $color-primary-gold);
+            animation: animate5_1 2s linear infinite;
         }
-    }     
-   
+        @keyframes animate5_1 {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0.12rem;
+            height: 100%;
+            background: linear-gradient(to bottom, $color-primary-gold, $color-primary-gold);
+            animation: animate5_2 2s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes animate5_2 {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+        &:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.12rem;
+            background: linear-gradient(to left, $color-primary-gold, $color-primary-gold);
+            animation: animate5_3 2s linear infinite;
+        }
+
+        @keyframes animate5_3 {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        &:nth-child(4) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.12rem;
+            height: 100%;
+            background: linear-gradient(to top, $color-primary-gold, $color-primary-gold);
+            animation: animate5_4 2s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes animate5_4 {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    }
+}

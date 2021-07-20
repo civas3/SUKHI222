@@ -1,73 +1,93 @@
-
-.sign-up-newsletter {
+#newsletter {
+  margin-bottom: 0 !important;
+  padding: 7rem 0;
+  background-color: $color-primary-black-background;
+  border-top: $color-primary-gold solid 0.1rem;
+  @include respond(tab-port) {
+    padding: 4rem 0;
     width: 100%;
-    padding: 0.2rem 0;
-    margin-top: 25rem;
-    text-align: center;
-    border-top: $color-primary-gold solid 0.1rem;
-    background-color: $color-primary-black-background;
-    
-    .sign-up-newsletter-form {
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    @include respond(tab-port) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+    }
+    //newsletter-form input and button div
+    div {
       display: flex;
+      flex-direction: column;
+      @include respond(tab-port) {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    //newsletter-form label
+    label {
+      margin-bottom: 2rem;
       text-align: center;
-      .sign-up-newsletter-container {
-        padding-top: 2rem;
-        margin: 0 auto;
-        b {
-          padding-right: 0.5rem;
-          padding-left: 0.5rem;
+      color: $color-primary-white;
+      letter-spacing: 0.1rem;
+      width: 100%;
+      @include respond(tab-port) {
+        margin-bottom: 1rem;
+      }
+    }
+    //newsletter-form input field
+    input {
+      min-height: 4rem;
+      border: none;
+      padding: 0 2rem;
+      @include respond(tab-port) {
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        min-width: 30rem;
+      }
+      @include respond(tab-land) {
+        min-width: 35rem;
+      }
+    }
+    //newsletter-form button
+    button {
+      min-height: 4rem;
+      background-color: $color-primary-green;
+      border: none;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      font-weight: bold;
+      padding: 0 2rem;
+      transition: 0.3s;
+      letter-spacing: 0.2rem;
+
+      @include respond(tab-port) {
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: 1rem;
+      }
+      &:hover {
+        color: $color-primary-white;
+      }
+    }
+    p {
+      margin-top: 1rem;
+      line-height: 120%;
+      text-align: center;
+      font-size: 70%;
+      //cookie notice text
+      &:first-of-type {
+        color: $color-primary-red;
+      }
+      //term and condition 
+      &:last-of-type {
+        a {
+          color: $color-primary-gold;
         }
-        label {
-          display: block;
-        }
-        input[type="email"] {
-          width: 70%;
-          padding: 1rem 0;
-          margin: 0 auto;
-          margin-top: 0.5rem;
-          display: inline-block;
-          border: none;
-          border-radius: 1rem;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          background: $color-primary-white;
-          text-align: center;
-          @include respond(b-phone) {
-            width: 80%;
-            border-radius: 0;
-          }
-        
-        }
-        button {
-          background-color: $color-primary-green;
-          color: $color-primary-black-background;
-          padding: 0.3rem 2rem 0.9rem 2rem;
-          border: none;
-          cursor: pointer;
-          width: 20%;
-          border-radius: 1rem;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          &:after{
-            content: "";
-          }
-          @include respond(b-phone) {
-            width: 80%;
-            border-radius: 0;
-          }
-          transition: 0.5s all ease;
-          &:hover {
-            background-color: darken($color-primary-green, 10%);
-            color: $color-primary-white;
-          }
-        }
-        p{
-          @include respond(s-phone) {
-            padding: 0 1rem;
-          }
-        }
-        
       }
     }
   }
-  
+}

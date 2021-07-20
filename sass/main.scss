@@ -19,7 +19,9 @@
 @import "components/header-image";
 @import "components/donate";
 @import "components/newsletter";
-@import "components/social-share-icons";
+@import "components/article-share-buttons";
+
+
 
 
 
@@ -34,16 +36,11 @@
 @import "pages/home";
 
 //-About
+@import "pages/where-we-work";
 //-------------------------------------------who-we-are
 @import "pages/sukhi222";
-//-------------------------------------------what-we-do
-//@import "pages/faq";
-//-------------------------------------------why-we-do-it
-//-------------------------------------------how-we-work
-//@import "pages/structure-and-functions";
-//-------------------------------------------where-we-work
+
 @import "pages/where-we-work";
-//-------------------------------------------projects
 @import "pages/projects";
 @import "pages/project";
 
@@ -68,8 +65,8 @@
 
 //-Additional
 @import "pages/get-involved";
-@import "pages/page-index";
 @import "pages/terms-privacy";
+@import "pages/sitemap";
 @import "responsive/responsive";
 
 

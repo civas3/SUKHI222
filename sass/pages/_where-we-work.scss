@@ -1,85 +1,71 @@
 //WHERE-WE-WORK
-.team-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)), 
-  url(../images/header/team-header.jpg);
-}
-
-.country-australia-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/country-australia-header.png);
-}
-
-.country-ghana-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/country-ghana-header.png);
-}
-
-.country-cameroon-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/country-cameroon-header.png);
-}
-
-.country-nepal-image {
-  background-image: linear-gradient(to right bottom, rgba($color-primary-black-background, 0.3), rgba($color-primary-black-background, 0.3)),
-    url(../images/header/country-nepal-header.png);
-}
-
-
-.where-we-work {
-  flex-wrap: wrap;
-  &__item {
-    display: flex;
-    justify-content: center;
-    width: 80vw;
-    margin-top: 10rem;
-
-    @include respond(tab-land) {
-      flex-direction: column;
-      width: 90vw;
-    }
-  
-    &--bio-photo {
-      margin-top: 5rem;
-      @include respond(tab-land) {
-        align-self: center;
-        padding-bottom: 2rem;
-      }
- 
-      img {
-        justify-content: flex-start;
-        @include border-white;
-      }
-    }
-
-    &--bio-info {
-      padding: 5rem;
-      min-width: 45rem;
-      @include respond(tab-land) {
-        min-width: none;
-        padding: 0;
-      }
-      @include respond(tab-land) {
-        min-width: auto;
-    }   
-  
-      h2{
-        @include respond(tab-land) {
-          text-align: center;
-        }
-      }
-      h2,
-      p {
-        margin-bottom: 0;
-      }
-    }
-
-    .position-title {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      @include respond(tab-land) {
-        padding: 2rem 0;
-      }
-      
+#where-we-work{
+  //where-we-work row
+  .row{
+    flex-direction: column-reverse;
+    
+    @include respond(s-desktop) {
+       flex-direction: row-reverse;
+    @include section-bottom-shadow;
     }
   }
-}
+
+  //where-we-work section contetnt
+  .section-content {  
+      //where-we-work section header
+      &__header {
+       width: 100%;
+       text-align: center;
+       @include respond(s-desktop) {
+        margin-top: 0;
+        text-align: left;
+        
+      }
+        h2{
+          padding-bottom: 0;
+          @include respond(s-desktop) {
+          text-align: left;
+        }
+        }
+
+        .position-title{
+          color: $color-primary-red;
+        }
+      }
+      //where-we-work section info
+      &__info {
+    
+      }
+     //where-we-work section image
+      &__image {  
+        @include respond(tab-land) {
+          display: flex;
+        }
+        img{
+          @include image-shadows;        
+        }
+      }
+      //where-we-work section inav buttons
+      &__nav-buttons-header{
+        font-weight: bold;
+        font-size: 2rem;
+        @include respond(tab-land) {
+          padding-right: 2rem;
+        }
+      }
+      &__nav-connect-buttons {
+         align-items: center;
+        @include respond(tab-land) {
+          flex-direction: column;
+          align-items: flex-end;
+          width: 90%;
+        }
+
+      }
+  }
+
+} 
+
+
+
+

@@ -1,6 +1,0 @@
-#THIS IS NOT FOR USE, IT'S A PRIVATE PROJECT AND ALL LICENCE BELONGS TO SUKHI222.ORG
-
-# SUKHI222
-“Promote and help achieve the universal basic human right of the dignified access within civil society to a minimum of 2 gallons of clean water a day, 2000 nutritional calories and 200 ft.³ of secure shelter.”   Our mission is to advocate for the dignified access of adequate food, water and shelter for the global population. To educate and enable every individual to achieve and maintain a self-sustainability in a cohesive and healthy society with others and with our environment.
-
-

@@ -22,5 +22,105 @@ You can also shorthand most properties for faster coding. Here are a couple I us
 *bg for background
 */
 
+//display none between 1024 - 1280px: small-desktop
+.display-none-s-desktop {
+  @include respond(s-desktop) {
+    display: none;
+  }
+  @include respond(m-desktop) {
+    display: block;
+  }
+}
+
+//tablet + flex justify-content: center;
+@include respond(s-desktop) {
+  .flex-j-end-s-desktop {
+    display: flex;
+    justify-content: flex-end !important;
+  }
+}
+
+//element width auto
+.w-auto {
+  width: auto !important;
+}
+
+//center element
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//text center
+.text-center {
+  text-align: center;
+}
+
+//display flex
+.d-flex {
+  display: flex;
+}
+//hide element
+.hide {
+  display: none !important;
+}
+//smaller font
+.small {
+  font-size: 80%;
+}
+//flex align none
+.flex-align-unset {
+  align-items: unset !important;
+}
+
+//width 100%
+w-100 {
+  width: 100% !important;
+}
+
+//color blue on hover
+.hover-font-blue {
+  p,
+  a,
+  li {
+    &:hover {
+      color: $color-primary-blue;
+    }
+  }
+}
+
+//color green on hover
+.hover-font-green {
+  p,
+  a,
+  li {
+    &:hover {
+      color: $color-primary-green;
+    }
+  }
+}
+
+//sukhi222 span colors
+.sukhi222-blue-span {
+  color: $color-primary-blue;
+  font-size: 120%;
+}
+.sukhi222-green-span {
+  color: $color-primary-green;
+  font-size: 120%;
+}
+.sukhi222-red-span {
+  color: $color-primary-red;
+  font-size: 120%;
+}
+
+//thank you page and 404 header h1
+.m-header{
+  margin: 15rem 0;
+  color: #474545 !important;
+}
 
 
+//for mobile menu when scroling, disable background scrolling
+.lock-scroll {
+  overflow: hidden; }

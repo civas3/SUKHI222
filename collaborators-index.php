@@ -5,47 +5,49 @@
 <html lang="en">
 
 <head>
-    <?php include("includes/head-tag-contents.php");?>
-
-    <title>SUKHI 222 | COLLABORATORS INDEX</title>
-    <meta name="description" content="">
+    <?php include("includes/head-tag-links.php");?>
+    <?php include("includes/site-pages-meta/meta-collaborators-index.php");?>
 
 </head>
 
 <body>
-    <nav id="menu" class="top-nav top-nav-black">
-        <?php include 'includes/site-sections/header.php'; ?>
-    </nav>
-    <div class="hero-image">
-        <div class="bg-image">
-            <div class="header-noimage"></div>
-        </div>
 
-        <div class="intro no-image">
-            <h1>SUKHI 222 COLLABORATORS INDEX</h1>
-        </div>
-    </div>
+    <header id="header">
 
-    <div class="main-wrapper">
-        <div class="wrapper-content page-index">
-            <div class="page-index__item">
-                <ol>
-                <h4>Organizations:</h4>
-                    <li>
-                    <a target="_blank" href="https://www.ifers.org">
-                            <h2>Ifers</h2>
-                        </a>
-                    </li>
-                    <li>
-                    <a target="_blank" href="https://veteranswithoutorders.org/">
-                            <h2>Veterans Without Orders</h2>
-                        </a>
-                    </li>
-                 
-                </ol>
+    <div class="header-content">
+            <div class="header-content__image">
+                <div class="header-noimage"></div>
+            </div>
+
+            <div class="header-content__title">
+                <h1>SUKHI 222 COLLABORATORS INDEX</h1>
             </div>
         </div>
-    </div>
+
+        <nav id="menu" class="navbar">
+            <?php include 'includes/site-sections/header.php'; ?>
+        </nav>
+
+    </header>
+
+    <main>
+            <div class="sitemap">
+                    <!-- COLLABORATORS INDEX -->
+                    <div class="sitemap-item">
+                        <div class="sitemap-item__header">
+                            <h2><u>ORGANIZATIONS</u></h2>
+                        </div>
+                        <div class="sitemap-item__content">
+                            <ul>
+                                <li><a target="_blank" href="https://www.ifers.org">Ifers Organization</a></li>
+                                <li><a target="_blank" href="https://veteranswithoutorders.org/">Veterans Without Orders Organization</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </main>
+
+
 
     <div class="sign-up-newsletter">
         <?php include 'includes/site-sections/newsletter.php'; ?>
@@ -54,12 +56,11 @@
     <footer class="footer">
         <?php include 'includes/site-sections/footer.php'; ?>
     </footer>
-    <div class="copy-right">
+    <div class="copy-rights">
         <?php include 'includes/site-sections/copyright.php'; ?>
     </div>
 
-    <!-- Java script -->
-    <?php include 'includes/site-features/js.php'; ?>
+
 </body>
 
 </html>
